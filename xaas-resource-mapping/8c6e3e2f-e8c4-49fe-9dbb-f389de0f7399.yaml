@@ -1,0 +1,27 @@
+id:
+  id: "8c6e3e2f-e8c4-49fe-9dbb-f389de0f7399"
+name: "IaaS VC VirtualMachine"
+description: "IaaS vCenter Virtual Machine"
+vcoType: "VC:VirtualMachine"
+providerId: "asd.external"
+externalTypeId: "Infrastructure.Virtual"
+mappingWorkflowId: "425bcb81-3a41-4f3e-be36-35d47f934732"
+mappingScriptActionFqn: "com.vmware.vcac.asd.mappings/mapToVCVM"
+targetCriteria:
+  type: "expression"
+  operator:
+    type: "equals"
+  leftOperand:
+    type: "path"
+    path: "provider-MachineInterfaceType"
+  rightOperand:
+    type: "constant"
+    value:
+      type: "string"
+      value: "vSphere"
+version:
+  version: "0.0.0"
+  major: 0
+  minor: 0
+  micro: 0
+builtIn: false

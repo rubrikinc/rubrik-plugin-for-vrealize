@@ -1,0 +1,246 @@
+id:
+  id: "655ad220-69e3-4e18-bcd8-369670a94fae"
+workflowId: "eae81419-1104-4477-b81e-60d4dee31ec1"
+name: "Rubrik - Instant Recovery"
+description: "Instant Recovery and vMotion of a Virtual Machine to a previous state"
+catalogRequestInfoHidden: true
+forms:
+- id: "e63481e2-75a9-45bf-be3a-cf53bc041297"
+  form:
+    name: "Action form"
+    designerLayout:
+      pages:
+      - id: "step0"
+        label: "Step"
+        sections:
+        - id: "__ASD_PRESENTATION_INSTANCE_SECTION"
+          rows:
+          - items:
+            - type: "field"
+              size: 2
+              id: "__ASD_PRESENTATION_INSTANCE"
+              dataType:
+                type: "primitive"
+                typeId: "STRING"
+              state:
+                dependencies: []
+                facets:
+                - type: "visible"
+                  value:
+                    type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: false
+                - type: "derivedValue"
+                  value:
+                    type: "callback"
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
+              initialStaticState:
+                dependencies: []
+                facets: []
+              labelDisplaySize: 0
+              columns: []
+              customField: false
+              errors: []
+              staticField: false
+              refreshOnChange: false
+              isMultiValued: false
+          designerHidden: true
+          state:
+            dependencies: []
+            facets:
+            - type: "visible"
+              value:
+                type: "constantClause"
+                value:
+                  type: "boolean"
+                  value: false
+        - rows:
+          - items:
+            - type: "field"
+              size: 2
+              id: "blueprint"
+              label: "blueprint"
+              description: "blueprint"
+              dataType:
+                type: "ref"
+                classId: "vCACCAFE:CompositeBlueprint"
+                label: "vCACCAFE:CompositeBlueprint"
+              displayAdvice: "TREE"
+              permissibleValues:
+                type: "dynamic"
+                customAllowed: false
+                dependencies: []
+              state:
+                dependencies: []
+                facets:
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+              initialStaticState:
+                dependencies: []
+                facets: []
+              labelDisplaySize: 2
+              columns: []
+              customField: false
+              errors: []
+              staticField: false
+              refreshOnChange: false
+              isMultiValued: false
+          - items:
+            - type: "field"
+              size: 2
+              id: "vraHost"
+              label: "vraHost"
+              description: "vraHost"
+              dataType:
+                type: "ref"
+                classId: "vCAC:VCACHost"
+                label: "vCAC:VCACHost"
+              displayAdvice: "TREE"
+              permissibleValues:
+                type: "dynamic"
+                customAllowed: false
+                dependencies: []
+              state:
+                dependencies: []
+                facets:
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+              initialStaticState:
+                dependencies: []
+                facets: []
+              labelDisplaySize: 2
+              columns: []
+              customField: false
+              errors: []
+              staticField: false
+              refreshOnChange: false
+              isMultiValued: false
+          - items:
+            - type: "field"
+              size: 2
+              id: "vraVm"
+              label: "vraVm"
+              description: "vraVm"
+              dataType:
+                type: "ref"
+                classId: "vCAC:VirtualMachine"
+                label: "vCAC:VirtualMachine"
+              displayAdvice: "TREE"
+              permissibleValues:
+                type: "dynamic"
+                customAllowed: false
+                dependencies: []
+              state:
+                dependencies: []
+                facets:
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+              initialStaticState:
+                dependencies: []
+                facets: []
+              labelDisplaySize: 2
+              columns: []
+              customField: false
+              errors: []
+              staticField: false
+              refreshOnChange: false
+              isMultiValued: false
+          designerHidden: false
+          state:
+            dependencies: []
+            facets: []
+        state:
+          dependencies: []
+          facets:
+          - type: "visible"
+            value:
+              type: "constantClause"
+              value:
+                type: "boolean"
+                value: true
+  scenario:
+    usageClass: "SubmitUsage"
+    id: "Resource.Action.Submit"
+status: "PUBLISHED"
+statusName: "Published"
+version:
+  version: "0.0.0"
+  major: 0
+  minor: 0
+  micro: 0
+inputParameter:
+  id: "972eef74-c4ca-4b5d-89a1-b7132649393c"
+  name: "vm"
+  resourceType:
+    id:
+      id: "8c6e3e2f-e8c4-49fe-9dbb-f389de0f7399"
+      tenant: "_internal"
+    name: "IaaS VC VirtualMachine"
+    description: "IaaS vCenter Virtual Machine"
+    vcoType: "VC:VirtualMachine"
+    tenantId: "_internal"
+    providerId: "asd.external"
+    externalTypeId: "Infrastructure.Virtual"
+    mappingWorkflowId: "425bcb81-3a41-4f3e-be36-35d47f934732"
+    mappingScriptActionFqn: "com.vmware.vcac.asd.mappings/mapToVCVM"
+    targetCriteria:
+      type: "expression"
+      operator:
+        type: "equals"
+      leftOperand:
+        type: "path"
+        path: "provider-MachineInterfaceType"
+      rightOperand:
+        type: "constant"
+        value:
+          type: "string"
+          value: "vSphere"
+    version:
+      version: "0.0.0"
+      major: 0
+      minor: 0
+      micro: 0
+    builtIn: true
+disposal: false
+targetCriteria:
+  type: "constantClause"
+  value:
+    type: "boolean"
+    value: true
+builtIn: false
