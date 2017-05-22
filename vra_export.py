@@ -1,24 +1,30 @@
 #!/bin/python
-import requests, json, sys, pprint, time
+import requests, json, sys, pprint, time,argparse
 from getpass import getpass
 import pprint
 
 
 class VRASession:
 
-    def __init__(self):
+    def __init__(self,argv):
 
         #Disable ssl warnings for Requests
         requests.packages.urllib3.disable_warnings()
+        parser = argparse.ArgumentParser()
+        parser.add_argument('--host', dest='host', help='VRA Host')
+        parser.add_argument('--tenant', dest='tenant', help='VRA Tenant')
+        parser.add_argument('--username', dest='username', help='VRA User')
+        parser.add_argument('--password', dest='password', help='VRA Password')
+        args = parser.parse_args()
+        self.host = args.host
+        self.tenant = args.tenant
+        self.username = args.username
+        self.password = args.password
 
-        #Prompt for configuration info
-        self.host = "devops-vra.rubrik.demo"
-        self.baseurl = "https://devops-vra.rubrik.demo"
-        self.user = "peter.milanese@rubrik.demo"
-        self.password = getpass("Enter in VRA password: ")
-        self.tenant = 'rubrik-devops'
+        self.baseurl = "https://" + self.host
+
         #attempt login
-        self.token =  self.authenticate(self.host, self.user, self.password, self.tenant)
+        self.token =  self.authenticate(self.host, self.username, self.password, self.tenant)
         self.headers = {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': self.token}
 
     def checkcall(self,r):
@@ -91,7 +97,7 @@ class VRASession:
 
 if __name__ == '__main__':
     pp=pprint.PrettyPrinter()
-    session = VRASession()
+    session = VRASession(sys.argv[1:])
 #    l = session.get_call("/content-management-service/api/packages")
 #    for output in l['content']:
 #      if output["name"] == "Rubrik_Package":
