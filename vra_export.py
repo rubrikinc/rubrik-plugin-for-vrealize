@@ -104,9 +104,8 @@ if __name__ == '__main__':
 #        session.delete_call("/content-management-service/api/packages/" + output['id'])
 #    session.create_package("rubrik-devops")
     l = session.get_call("/content-management-service/api/packages")
-    pp.pprint(l)
     for output in l['content']:
       if output["name"] == "Rubrik_Package":
-        print("exporting package")
         session.get_call_download("/content-management-service/api/packages/" + output['id'], output['name']+".zip")
+        print(output['name']+".zip")
       
