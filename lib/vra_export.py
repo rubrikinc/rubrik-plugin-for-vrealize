@@ -15,11 +15,13 @@ class VRASession:
         parser.add_argument('--tenant', dest='tenant', help='VRA Tenant')
         parser.add_argument('--username', dest='username', help='VRA User')
         parser.add_argument('--password', dest='password', help='VRA Password')
+        parser.add_argument('--package', dest='packageName', help='VRA Package Name')
         args = parser.parse_args()
         self.host = args.host
         self.tenant = args.tenant
         self.username = args.username
         self.password = args.password
+        self.packageName = args.packageName
 
         self.baseurl = "https://" + self.host
 
@@ -89,7 +91,7 @@ class VRASession:
         obj["contents"] = []
         for output in list['content']:
           if output['tenantId'] == tenantId:
-            obj["name"]="Rubrik_Package"
+            obj["name"]=self.packageName
             obj["description"]="Package containing Rubrik Contents"
             obj["contents"].append(output['id'])
         session.post_call("/content-management-service/api/packages",obj)
@@ -105,7 +107,7 @@ if __name__ == '__main__':
 #    session.create_package("rubrik-devops")
     l = session.get_call("/content-management-service/api/packages")
     for output in l['content']:
-      if output["name"] == "Rubrik_Package":
+      if output["name"] == session.packageName:
         session.get_call_download("/content-management-service/api/packages/" + output['id'], output['name']+".zip")
         print(output['name']+".zip")
       
