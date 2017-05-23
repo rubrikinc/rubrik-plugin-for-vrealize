@@ -15,17 +15,15 @@ class VRASession:
         parser.add_argument('--tenant', dest='tenant', help='VRA Tenant')
         parser.add_argument('--username', dest='username', help='VRA User')
         parser.add_argument('--password', dest='password', help='VRA Password')
-        parser.add_argument('--package', dest='packageName', help='VRA Package Name')
+        parser.add_argument('--package', dest='package', help='VRA Package Name')
         args = parser.parse_args()
         self.host = args.host
         self.tenant = args.tenant
         self.username = args.username
         self.password = args.password
-        self.packageName = args.packageName
-
+        self.packageName = args.package
         self.baseurl = "https://" + self.host
 
-        #attempt login
         self.token =  self.authenticate(self.host, self.username, self.password, self.tenant)
         self.headers = {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': self.token}
 
@@ -85,29 +83,34 @@ class VRASession:
             print r.status_code, r.reason
             sys.exit(1)
 
-    def create_package(self,tenantId):
+    def create_package(self):
         list = session.get_call("/content-management-service/api/contents")
         obj = {}
         obj["contents"] = []
         for output in list['content']:
-          if output['tenantId'] == tenantId:
+          if output['tenantId'] == self.tenant:
             obj["name"]=self.packageName
-            obj["description"]="Package containing Rubrik Contents"
+            obj["description"]=self.packageName
             obj["contents"].append(output['id'])
         session.post_call("/content-management-service/api/packages",obj)
 
+    def delete_package(self):
+        l = session.get_call("/content-management-service/api/packages")
+        for output in l['content']:
+          if output["name"] == self.packageName:
+            session.delete_call("/content-management-service/api/packages/" + output['id'])
+
+    def download_package(self):
+        l = session.get_call("/content-management-service/api/packages")
+        for output in l['content']:
+          if output["name"] == self.packageName:
+            session.get_call_download("/content-management-service/api/packages/" + output['id'], output['name']+".zip")
+            print(output['name']+".zip")
+
 
 if __name__ == '__main__':
-    pp=pprint.PrettyPrinter()
     session = VRASession(sys.argv[1:])
-#    l = session.get_call("/content-management-service/api/packages")
-#    for output in l['content']:
-#      if output["name"] == "Rubrik_Package":
-#        session.delete_call("/content-management-service/api/packages/" + output['id'])
-#    session.create_package("rubrik-devops")
-    l = session.get_call("/content-management-service/api/packages")
-    for output in l['content']:
-      if output["name"] == session.packageName:
-        session.get_call_download("/content-management-service/api/packages/" + output['id'], output['name']+".zip")
-        print(output['name']+".zip")
+    session.delete_package()
+    session.create_package()
+    session.download_package()
       
