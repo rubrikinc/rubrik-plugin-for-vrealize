@@ -1,0 +1,187 @@
+id:
+  id: "8ddfd20d-cbf6-425d-b5dd-28dc4bb1adf1"
+workflowId: "11560189-68d6-494d-9c59-0c56dba522f6"
+name: "Rubrik Assign VM to SLA Domain"
+description: "Assign a virtual machine to a Rubrik SLA Domain"
+catalogRequestInfoHidden: true
+forms:
+- id: "e8a505fd-39b5-4467-b5e6-c5c408139ff9"
+  form:
+    name: "Request form"
+    designerLayout:
+      pages:
+      - id: "step0"
+        label: "Step"
+        sections:
+        - id: "__ASD_PRESENTATION_INSTANCE_SECTION"
+          rows:
+          - items:
+            - type: "field"
+              size: 2
+              id: "__ASD_PRESENTATION_INSTANCE"
+              dataType:
+                type: "primitive"
+                typeId: "STRING"
+              state:
+                dependencies: []
+                facets:
+                - type: "visible"
+                  value:
+                    type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: false
+                - type: "derivedValue"
+                  value:
+                    type: "callback"
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
+              initialStaticState:
+                dependencies: []
+                facets: []
+              labelDisplaySize: 0
+              columns: []
+              customField: false
+              errors: []
+              staticField: false
+              refreshOnChange: false
+              isMultiValued: false
+          designerHidden: true
+          state:
+            dependencies: []
+            facets:
+            - type: "visible"
+              value:
+                type: "constantClause"
+                value:
+                  type: "boolean"
+                  value: false
+        - rows:
+          - items:
+            - type: "field"
+              size: 2
+              id: "slaDomainName"
+              label: "slaDomainName"
+              description: "slaDomainName"
+              dataType:
+                type: "primitive"
+                typeId: "STRING"
+              displayAdvice: "DROPDOWN"
+              permissibleValues:
+                type: "dynamic"
+                customAllowed: false
+                dependencies: []
+              state:
+                dependencies: []
+                facets:
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+              initialStaticState:
+                dependencies: []
+                facets:
+                - type: "visible"
+                  value:
+                    type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: true
+              labelDisplaySize: 2
+              columns: []
+              customField: false
+              errors: []
+              staticField: false
+              refreshOnChange: false
+              isMultiValued: false
+          - items:
+            - type: "field"
+              size: 2
+              id: "vm"
+              label: "The virtual machine that will get added to the Rubrik SLA Domain"
+              description: "The virtual machine that will get added to the Rubrik\
+                \ SLA Domain"
+              dataType:
+                type: "ref"
+                componentTypeId: "com.vmware.csp.core.designer.service"
+                classId: "VC:VirtualMachine"
+                label: "VC:VirtualMachine"
+              displayAdvice: "TREE"
+              permissibleValues:
+                type: "dynamic"
+                customAllowed: false
+                dependencies: []
+              state:
+                dependencies: []
+                facets:
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+              initialStaticState:
+                dependencies: []
+                facets:
+                - type: "visible"
+                  value:
+                    type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: true
+              labelDisplaySize: 2
+              columns: []
+              customField: false
+              errors: []
+              staticField: false
+              refreshOnChange: false
+              isMultiValued: false
+          designerHidden: false
+          state:
+            dependencies: []
+            facets: []
+        state:
+          dependencies: []
+          facets:
+          - type: "visible"
+            value:
+              type: "constantClause"
+              value:
+                type: "boolean"
+                value: true
+  scenario:
+    usageClass: "SubmitUsage"
+    id: "Request.Submit"
+status: "PUBLISHED"
+statusName: "Published"
+version:
+  version: "0.0.0"
+  major: 0
+  minor: 0
+  micro: 0
+component: true
+componentConfiguration:
+  scalable: false
+  categoryId: "designer.service"
+  operations:
+  - lifecycleType: "UPDATE"
+    routineId: "11560189-68d6-494d-9c59-0c56dba522f6"
+builtIn: false
