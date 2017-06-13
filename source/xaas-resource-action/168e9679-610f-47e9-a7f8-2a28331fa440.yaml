@@ -12,8 +12,27 @@ forms:
       pages:
       - id: "step0"
         label: "Submit"
+        state:
+          dependencies: []
+          facets:
+          - type: "visible"
+            value:
+              type: "constantClause"
+              value:
+                type: "boolean"
+                value: true
         sections:
         - id: "__ASD_PRESENTATION_INSTANCE_SECTION"
+          designerHidden: true
+          state:
+            dependencies: []
+            facets:
+            - type: "visible"
+              value:
+                type: "constantClause"
+                value:
+                  type: "boolean"
+                  value: false
           rows:
           - items:
             - type: "field"
@@ -31,36 +50,30 @@ forms:
                     value:
                       type: "boolean"
                       value: false
-                - type: "derivedValue"
-                  value:
-                    type: "callback"
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: false
+                - type: "derivedValue"
+                  value:
+                    type: "callback"
               initialStaticState:
                 dependencies: []
                 facets: []
               labelDisplaySize: 0
-              columns: []
               customField: false
-              errors: []
               staticField: false
               refreshOnChange: false
               isMultiValued: false
-          designerHidden: true
+              columns: []
+              errors: []
+        - label: "Request Details"
+          designerHidden: false
           state:
             dependencies: []
-            facets:
-            - type: "visible"
-              value:
-                type: "constantClause"
-                value:
-                  type: "boolean"
-                  value: false
-        - label: "Request Details"
+            facets: []
           rows:
           - items:
             - type: "field"
@@ -74,6 +87,12 @@ forms:
               state:
                 dependencies: []
                 facets:
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
                 - type: "refreshOnChange"
                   value:
                     type: "constant"
@@ -86,22 +105,16 @@ forms:
                     value:
                       type: "boolean"
                       value: true
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
               initialStaticState:
                 dependencies: []
                 facets: []
               labelDisplaySize: 2
-              columns: []
               customField: false
-              errors: []
               staticField: false
               refreshOnChange: false
               isMultiValued: false
+              columns: []
+              errors: []
           - items:
             - type: "field"
               size: 2
@@ -120,6 +133,12 @@ forms:
               state:
                 dependencies: []
                 facets:
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
                 - type: "refreshOnChange"
                   value:
                     type: "constant"
@@ -132,22 +151,16 @@ forms:
                     value:
                       type: "boolean"
                       value: true
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
               initialStaticState:
                 dependencies: []
                 facets: []
               labelDisplaySize: 2
-              columns: []
               customField: false
-              errors: []
               staticField: false
               refreshOnChange: false
               isMultiValued: false
+              columns: []
+              errors: []
           - items:
             - type: "field"
               size: 2
@@ -161,6 +174,12 @@ forms:
               state:
                 dependencies: []
                 facets:
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
                 - type: "refreshOnChange"
                   value:
                     type: "constant"
@@ -186,41 +205,22 @@ forms:
                           value:
                             type: "path"
                             path: "token"
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
               initialStaticState:
                 dependencies: []
                 facets: []
               labelDisplaySize: 2
-              columns: []
               customField: false
-              errors: []
               staticField: false
               refreshOnChange: false
               isMultiValued: false
-          designerHidden: false
-          state:
-            dependencies: []
-            facets: []
+              columns: []
+              errors: []
         - label: "Submit to perform On-Demand Snapsot"
-          rows: []
           designerHidden: false
           state:
             dependencies: []
             facets: []
-        state:
-          dependencies: []
-          facets:
-          - type: "visible"
-            value:
-              type: "constantClause"
-              value:
-                type: "boolean"
-                value: true
+          rows: []
   scenario:
     usageClass: "SubmitUsage"
     id: "Resource.Action.Submit"

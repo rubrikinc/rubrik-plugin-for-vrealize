@@ -2,7 +2,7 @@ id:
   id: "76e42651-8b9a-4429-a01a-56c958f00f8a"
 workflowId: "d4e56a49-96b6-4eec-9e2a-2b877a39fec8"
 name: "Rubrik - Recover File"
-description: "Recover a file"
+description: "Perform a file search, and recover the file to a Virtual Machine."
 catalogRequestInfoHidden: true
 forms:
 - id: "ca049f49-ed2d-4c69-8539-04c000c49e31"
@@ -12,8 +12,27 @@ forms:
       pages:
       - id: "step0"
         label: "Step"
+        state:
+          dependencies: []
+          facets:
+          - type: "visible"
+            value:
+              type: "constantClause"
+              value:
+                type: "boolean"
+                value: true
         sections:
         - id: "__ASD_PRESENTATION_INSTANCE_SECTION"
+          designerHidden: true
+          state:
+            dependencies: []
+            facets:
+            - type: "visible"
+              value:
+                type: "constantClause"
+                value:
+                  type: "boolean"
+                  value: false
           rows:
           - items:
             - type: "field"
@@ -31,36 +50,30 @@ forms:
                     value:
                       type: "boolean"
                       value: false
-                - type: "derivedValue"
-                  value:
-                    type: "callback"
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: false
+                - type: "derivedValue"
+                  value:
+                    type: "callback"
               initialStaticState:
                 dependencies: []
                 facets: []
               labelDisplaySize: 0
-              columns: []
               customField: false
-              errors: []
               staticField: false
               refreshOnChange: false
               isMultiValued: false
-          designerHidden: true
+              columns: []
+              errors: []
+        - designerHidden: false
           state:
             dependencies: []
-            facets:
-            - type: "visible"
-              value:
-                type: "constantClause"
-                value:
-                  type: "boolean"
-                  value: false
-        - rows:
+            facets: []
+          rows:
           - items:
             - type: "field"
               size: 2
@@ -75,12 +88,6 @@ forms:
                 dependencies: []
                 facets:
                 - type: "visible"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
-                - type: "refreshOnChange"
                   value:
                     type: "constant"
                     value:
@@ -111,6 +118,12 @@ forms:
                     value:
                       type: "boolean"
                       value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
                 - type: "readOnly"
                   value:
                     type: "constant"
@@ -121,12 +134,12 @@ forms:
                 dependencies: []
                 facets: []
               labelDisplaySize: 2
-              columns: []
               customField: false
-              errors: []
               staticField: false
               refreshOnChange: false
               isMultiValued: false
+              columns: []
+              errors: []
           - items:
             - type: "field"
               size: 2
@@ -146,18 +159,18 @@ forms:
                     value:
                       type: "boolean"
                       value: false
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
                 - type: "readOnly"
                   value:
                     type: "constant"
@@ -168,12 +181,12 @@ forms:
                 dependencies: []
                 facets: []
               labelDisplaySize: 2
-              columns: []
               customField: false
-              errors: []
               staticField: false
               refreshOnChange: false
               isMultiValued: false
+              columns: []
+              errors: []
           - items:
             - type: "field"
               size: 2
@@ -198,13 +211,13 @@ forms:
                     value:
                       type: "boolean"
                       value: false
-                - type: "refreshOnChange"
+                - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
-                - type: "editable"
+                - type: "refreshOnChange"
                   value:
                     type: "constant"
                     value:
@@ -220,17 +233,17 @@ forms:
                 dependencies: []
                 facets: []
               labelDisplaySize: 2
-              columns: []
               customField: false
-              errors: []
               staticField: false
               refreshOnChange: false
               isMultiValued: false
+              columns: []
+              errors: []
+        - label: "Enter a search string"
           designerHidden: false
           state:
             dependencies: []
             facets: []
-        - label: "Enter a search string"
           rows:
           - items:
             - type: "field"
@@ -246,6 +259,12 @@ forms:
               state:
                 dependencies: []
                 facets:
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
                 - type: "refreshOnChange"
                   value:
                     type: "constant"
@@ -258,27 +277,21 @@ forms:
                     value:
                       type: "boolean"
                       value: true
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
               initialStaticState:
                 dependencies: []
                 facets: []
               labelDisplaySize: 2
-              columns: []
               customField: false
-              errors: []
               staticField: false
               refreshOnChange: false
               isMultiValued: false
+              columns: []
+              errors: []
+        - label: "Select the file that you would like to recover"
           designerHidden: false
           state:
             dependencies: []
             facets: []
-        - label: "Select the file that you would like to recover"
           rows:
           - items:
             - type: "field"
@@ -321,6 +334,12 @@ forms:
               state:
                 dependencies: []
                 facets:
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
                 - type: "refreshOnChange"
                   value:
                     type: "constant"
@@ -333,27 +352,21 @@ forms:
                     value:
                       type: "boolean"
                       value: true
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
               initialStaticState:
                 dependencies: []
                 facets: []
               labelDisplaySize: 2
-              columns: []
               customField: false
-              errors: []
               staticField: false
               refreshOnChange: false
               isMultiValued: false
+              columns: []
+              errors: []
+        - label: "Select the version of the file"
           designerHidden: false
           state:
             dependencies: []
             facets: []
-        - label: "Select the version of the file"
           rows:
           - items:
             - type: "field"
@@ -401,12 +414,12 @@ forms:
                 dependencies: []
                 facets: []
               labelDisplaySize: 2
-              columns: []
               customField: true
-              errors: []
               staticField: false
               refreshOnChange: false
               isMultiValued: false
+              columns: []
+              errors: []
           - items:
             - type: "field"
               size: 2
@@ -453,13 +466,13 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "mandatory"
+                - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
-                - type: "editable"
+                - type: "mandatory"
                   value:
                     type: "constant"
                     value:
@@ -469,17 +482,17 @@ forms:
                 dependencies: []
                 facets: []
               labelDisplaySize: 2
-              columns: []
               customField: true
-              errors: []
               staticField: false
               refreshOnChange: false
               isMultiValued: false
+              columns: []
+              errors: []
+        - label: "Optionally restore as different user"
           designerHidden: false
           state:
             dependencies: []
             facets: []
-        - label: "Optionally restore as different user"
           rows:
           - items:
             - type: "field"
@@ -494,28 +507,28 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []
               labelDisplaySize: 2
-              columns: []
               customField: false
-              errors: []
               staticField: false
               refreshOnChange: false
               isMultiValued: false
+              columns: []
+              errors: []
           - items:
             - type: "field"
               size: 2
@@ -529,28 +542,28 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []
               labelDisplaySize: 2
-              columns: []
               customField: false
-              errors: []
               staticField: false
               refreshOnChange: false
               isMultiValued: false
+              columns: []
+              errors: []
           - items:
             - type: "field"
               size: 2
@@ -564,33 +577,33 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []
               labelDisplaySize: 2
-              columns: []
               customField: false
-              errors: []
               staticField: false
               refreshOnChange: false
               isMultiValued: false
+              columns: []
+              errors: []
+        - label: "Optionally restore to alternate Path"
           designerHidden: false
           state:
             dependencies: []
             facets: []
-        - label: "Optionally restore to alternate Path"
           rows:
           - items:
             - type: "field"
@@ -605,41 +618,28 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []
               labelDisplaySize: 2
-              columns: []
               customField: false
-              errors: []
               staticField: false
               refreshOnChange: false
               isMultiValued: false
-          designerHidden: false
-          state:
-            dependencies: []
-            facets: []
-        state:
-          dependencies: []
-          facets:
-          - type: "visible"
-            value:
-              type: "constantClause"
-              value:
-                type: "boolean"
-                value: true
+              columns: []
+              errors: []
   scenario:
     usageClass: "SubmitUsage"
     id: "Resource.Action.Submit"
