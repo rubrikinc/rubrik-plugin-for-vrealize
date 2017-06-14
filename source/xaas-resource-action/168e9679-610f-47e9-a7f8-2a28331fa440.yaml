@@ -1,11 +1,12 @@
 id:
   id: "168e9679-610f-47e9-a7f8-2a28331fa440"
+access: "external"
 workflowId: "0307ec42-c734-432a-8783-f5ad08600af5"
 name: "Rubrik - On-Demand Snapshot"
 description: "Initiate an on-demand backup job and wait for a success/failure response"
 catalogRequestInfoHidden: true
 forms:
-- id: "e0fd6285-8c2a-440e-9666-c2c422feb001"
+- id: "0fad0ac1-b48b-480c-aa06-52067e9ae315"
   form:
     name: "Submitted action details form"
     designerLayout:
@@ -232,7 +233,7 @@ version:
   minor: 0
   micro: 0
 inputParameter:
-  id: "355ffded-1aff-4f6a-a40e-7796a831b047"
+  id: "df341e21-8e37-4112-82ae-e5ff40df0e2b"
   name: "vm"
   resourceType:
     id:

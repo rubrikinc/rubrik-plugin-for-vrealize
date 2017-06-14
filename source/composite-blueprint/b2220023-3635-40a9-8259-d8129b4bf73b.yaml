@@ -1,5 +1,5 @@
 id: b2220023-3635-40a9-8259-d8129b4bf73b
-name: Windows Machines
+name: Windows 2012
 description: "Details:\n\t Endpoint name: vCenter\n\t Endpoint URL: https://demovcsa.rubrik.demo/sdk\n\
   \t Template name: devops-win2k12-sysprep"
 status: PUBLISHED
@@ -23,7 +23,6 @@ components:
         min: 1
       disks:
       - capacity: 40
-        custom_properties: null
         id: 0
         initial_location: ''
         is_clone: true

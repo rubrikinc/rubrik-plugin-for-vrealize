@@ -1,12 +1,13 @@
 id:
   id: "1b90cde7-80fb-4be6-a328-9f4415ad48f4"
+access: "external"
 workflowId: "440cb320-a2b8-4d3b-82ed-4e82ac7c3b20"
 name: "Rubrik - SLA Domain"
 description: "View the current assignment, and update the assignment of a virtual\
   \ machine to a Rubrik SLA Domain"
 catalogRequestInfoHidden: true
 forms:
-- id: "f01f5fb0-0e73-41bf-baaa-834af477b1f5"
+- id: "cbcb9d52-171f-465a-b47d-4820be98dc03"
   form:
     name: "Action form"
     designerLayout:
@@ -358,7 +359,7 @@ version:
   minor: 0
   micro: 0
 inputParameter:
-  id: "c0056a9a-7cf2-4c54-982b-37c010302ef9"
+  id: "a9ef9485-da72-4ba8-9c34-1853068a17ff"
   name: "vm"
   resourceType:
     id:

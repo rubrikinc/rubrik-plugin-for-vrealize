@@ -1,5 +1,5 @@
 id: e1af101b-c2e1-48b4-8a41-b39a698d7cc2
-name: Linux Machines
+name: CentOS 7
 description: "Details:\n\t Endpoint name: vCenter\n\t Endpoint URL: https://demovcsa.rubrik.demo/sdk\n\
   \t Template name: devops-centos7-tmpl"
 status: PUBLISHED
@@ -24,7 +24,7 @@ components:
       disks:
       - capacity: 16
         custom_properties: null
-        id: 1495470881201
+        id: 1497383734958
         initial_location: ''
         is_clone: true
         label: Hard disk 1

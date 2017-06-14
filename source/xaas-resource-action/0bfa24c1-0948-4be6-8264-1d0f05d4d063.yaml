@@ -1,12 +1,12 @@
 id:
   id: "0bfa24c1-0948-4be6-8264-1d0f05d4d063"
+access: "external"
 workflowId: "7c8144a5-7da2-4020-b15c-998216943b6a"
 name: "Rubrik - Live Mount"
-description: "Submit this request, and monitor your inbox (Manual User Actions). You'll\
-  \ be able to choose a recovery point."
+description: "Live Mount a previous version of the VM"
 catalogRequestInfoHidden: true
 forms:
-- id: "8b17a48c-ac53-4cad-95b0-9dcc166ee6b6"
+- id: "7e7d1277-d770-41da-955e-6b08656d44de"
   form:
     name: "Action form"
     designerLayout:
@@ -94,6 +94,12 @@ forms:
               state:
                 dependencies: []
                 facets:
+                - type: "mandatory"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
                 - type: "editable"
                   value:
                     type: "constant"
@@ -135,6 +141,12 @@ forms:
               state:
                 dependencies: []
                 facets:
+                - type: "mandatory"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
                 - type: "editable"
                   value:
                     type: "constant"
@@ -166,9 +178,9 @@ forms:
           - items:
             - type: "field"
               size: 2
-              id: "vmid"
-              label: "Rubrik VM ID"
-              description: "Rubrik VM ID"
+              id: "vmId"
+              label: "Rubrik ID of the VM"
+              description: "Rubrik ID of the VM"
               dataType:
                 type: "primitive"
                 typeId: "STRING"
@@ -204,6 +216,45 @@ forms:
               isMultiValued: false
               columns: []
               errors: []
+          - items:
+            - type: "field"
+              size: 2
+              id: "snapshotDate"
+              label: "Snaphsot Version"
+              description: "Select the snapshot version that you'd like to livemount"
+              dataType:
+                type: "primitive"
+                typeId: "STRING"
+              displayAdvice: "DROPDOWN"
+              permissibleValues:
+                type: "dynamic"
+                customAllowed: false
+                dependencies: []
+              state:
+                dependencies: []
+                facets:
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
+              initialStaticState:
+                dependencies: []
+                facets: []
+              labelDisplaySize: 2
+              customField: false
+              staticField: false
+              refreshOnChange: false
+              isMultiValued: false
+              columns: []
+              errors: []
   scenario:
     usageClass: "SubmitUsage"
     id: "Resource.Action.Submit"
@@ -215,7 +266,7 @@ version:
   minor: 0
   micro: 0
 inputParameter:
-  id: "ad0a7be4-1274-4e80-a3b5-6bba4f365e93"
+  id: "8c619de2-ee9b-4570-835e-a91657bfcffb"
   name: "vm"
   resourceType:
     id:

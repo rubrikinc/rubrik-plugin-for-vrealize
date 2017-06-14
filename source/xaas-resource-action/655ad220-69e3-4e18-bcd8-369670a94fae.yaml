@@ -1,11 +1,12 @@
 id:
   id: "655ad220-69e3-4e18-bcd8-369670a94fae"
+access: "external"
 workflowId: "eae81419-1104-4477-b81e-60d4dee31ec1"
 name: "Rubrik - Instant Recovery"
 description: "Instant Recovery and vMotion of a Virtual Machine to a previous state"
 catalogRequestInfoHidden: true
 forms:
-- id: "e63481e2-75a9-45bf-be3a-cf53bc041297"
+- id: "7cc19b25-a583-4eb9-9fad-45206d42af05"
   form:
     name: "Action form"
     designerLayout:
@@ -197,15 +198,15 @@ forms:
   scenario:
     usageClass: "SubmitUsage"
     id: "Resource.Action.Submit"
-status: "PUBLISHED"
-statusName: "Published"
+status: "DRAFT"
+statusName: "Draft"
 version:
   version: "0.0.0"
   major: 0
   minor: 0
   micro: 0
 inputParameter:
-  id: "972eef74-c4ca-4b5d-89a1-b7132649393c"
+  id: "45be7b98-8ff4-4ee1-a202-cf21b416d2e0"
   name: "vm"
   resourceType:
     id:

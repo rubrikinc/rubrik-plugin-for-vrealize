@@ -1,11 +1,12 @@
 id:
   id: "8ddfd20d-cbf6-425d-b5dd-28dc4bb1adf1"
+access: "external"
 workflowId: "11560189-68d6-494d-9c59-0c56dba522f6"
-name: "Rubrik Assign VM to SLA Domain"
+name: "Rubrik Assign SLA Domain"
 description: "Assign a virtual machine to a Rubrik SLA Domain"
 catalogRequestInfoHidden: true
 forms:
-- id: "e8a505fd-39b5-4467-b5e6-c5c408139ff9"
+- id: "a7c26720-587c-4832-82c6-658f274c449f"
   form:
     name: "Request form"
     designerLayout:

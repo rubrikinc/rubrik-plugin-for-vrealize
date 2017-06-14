@@ -1,11 +1,12 @@
 id:
   id: "293dcb15-299e-4602-b5fb-9538babb453d"
+access: "external"
 workflowId: "fec22a1d-f17c-42d3-ad2e-2833c8dc2e56"
 name: "Rubrik vCenter Refresh"
 description: ""
 catalogRequestInfoHidden: true
 forms:
-- id: "bc52a221-c2c4-4fb3-b990-b02c48960839"
+- id: "783bb715-042c-4e2f-9bb1-8117ff86563e"
   form:
     name: "Request form"
     designerLayout:

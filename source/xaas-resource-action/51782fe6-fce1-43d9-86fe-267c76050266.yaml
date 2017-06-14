@@ -1,12 +1,12 @@
 id:
-  id: "76e42651-8b9a-4429-a01a-56c958f00f8a"
+  id: "51782fe6-fce1-43d9-86fe-267c76050266"
 access: "external"
 workflowId: "d4e56a49-96b6-4eec-9e2a-2b877a39fec8"
-name: "Rubrik - Recover File"
+name: "Rubrik - Recover File - TEST"
 description: "Perform a file search, and recover the file to a Virtual Machine."
 catalogRequestInfoHidden: true
 forms:
-- id: "5347de07-7c35-4efb-ac5c-527ea82300fc"
+- id: "24b49b09-5802-4a2f-a606-8ad56ca6f052"
   form:
     name: "Action form"
     designerLayout:
@@ -211,7 +211,7 @@ forms:
                     type: "constant"
                     value:
                       type: "boolean"
-                      value: false
+                      value: true
                 - type: "editable"
                   value:
                     type: "constant"
@@ -235,6 +235,34 @@ forms:
                 facets: []
               labelDisplaySize: 2
               customField: false
+              staticField: false
+              refreshOnChange: false
+              isMultiValued: false
+              columns: []
+              errors: []
+          - items:
+            - type: "field"
+              size: 2
+              id: "slaDomain"
+              label: "Current SLA"
+              dataType:
+                type: "primitive"
+                typeId: "STRING"
+              displayAdvice: "TEXTBOX"
+              state:
+                dependencies: []
+                facets:
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+              initialStaticState:
+                dependencies: []
+                facets: []
+              labelDisplaySize: 2
+              customField: true
               staticField: false
               refreshOnChange: false
               isMultiValued: false
@@ -644,15 +672,15 @@ forms:
   scenario:
     usageClass: "SubmitUsage"
     id: "Resource.Action.Submit"
-status: "PUBLISHED"
-statusName: "Published"
+status: "DRAFT"
+statusName: "Draft"
 version:
   version: "0.0.0"
   major: 0
   minor: 0
   micro: 0
 inputParameter:
-  id: "38baec90-bccb-497a-b9fe-5e1f71289ea1"
+  id: "f53dff45-d486-4d48-ae30-cac032dd760a"
   name: "vm"
   resourceType:
     id:

@@ -1,0 +1,27 @@
+id: "rubrik_SetSLAPG"
+label: "rubrik_SetSLAPG"
+properties:
+  rubrik_SLADomain:
+    facets:
+      visibility:
+        type: "constant"
+        value:
+          type: "boolean"
+          value: false
+      encrypted:
+        type: "constant"
+        value:
+          type: "boolean"
+          value: false
+      mandatory:
+        type: "constant"
+        value:
+          type: "boolean"
+          value: false
+      defaultValue:
+        type: "constant"
+        value:
+          type: "string"
+          value: ""
+createdDate: "2017-06-13T21:38:22.434Z"
+lastUpdated: "2017-06-13T21:38:22.434Z"
