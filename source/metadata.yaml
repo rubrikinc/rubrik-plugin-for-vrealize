@@ -18,8 +18,6 @@ data:
   name: "Rubrik - On-Demand Snapshot"
   dependencies:
   - "xaas-resource-mapping/8c6e3e2f-e8c4-49fe-9dbb-f389de0f7399.yaml"
-- locator: "property-group/rubrik_SetSLAPG.yaml"
-  name: "rubrik_SetSLAPG"
 - locator: "xaas-resource-action/655ad220-69e3-4e18-bcd8-369670a94fae.yaml"
   name: "Rubrik - Instant Recovery"
   dependencies:
@@ -35,4 +33,4 @@ data:
 - locator: "composite-blueprint/e1af101b-c2e1-48b4-8a41-b39a698d7cc2.yaml"
   name: "CentOS 7"
   description: "CentOS 7"
-exportTime: "2017-06-15T17:30:21.011Z"
+exportTime: "2017-06-15T17:32:46.071Z"
