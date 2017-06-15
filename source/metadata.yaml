@@ -18,8 +18,6 @@ data:
   name: "Rubrik - On-Demand Snapshot"
   dependencies:
   - "xaas-resource-mapping/8c6e3e2f-e8c4-49fe-9dbb-f389de0f7399.yaml"
-- locator: "xaas-blueprint/293dcb15-299e-4602-b5fb-9538babb453d.yaml"
-  name: "Rubrik vCenter Refresh"
 - locator: "property-group/rubrik_SetSLAPG.yaml"
   name: "rubrik_SetSLAPG"
 - locator: "xaas-resource-action/655ad220-69e3-4e18-bcd8-369670a94fae.yaml"
@@ -34,9 +32,7 @@ data:
   name: "Rubrik - SLA Domain"
   dependencies:
   - "xaas-resource-mapping/8c6e3e2f-e8c4-49fe-9dbb-f389de0f7399.yaml"
-- locator: "xaas-blueprint/8ddfd20d-cbf6-425d-b5dd-28dc4bb1adf1.yaml"
-  name: "Rubrik Assign SLA Domain"
 - locator: "composite-blueprint/e1af101b-c2e1-48b4-8a41-b39a698d7cc2.yaml"
   name: "CentOS 7"
   description: "CentOS 7"
-exportTime: "2017-06-15T17:24:48.863Z"
+exportTime: "2017-06-15T17:30:21.011Z"
