@@ -10,6 +10,10 @@ data:
   - "xaas-resource-mapping/8c6e3e2f-e8c4-49fe-9dbb-f389de0f7399.yaml"
 - locator: "xaas-resource-mapping/8c6e3e2f-e8c4-49fe-9dbb-f389de0f7399.yaml"
   name: "IaaS VC VirtualMachine"
+- locator: "xaas-resource-action/e1de07ac-682f-4185-8641-e6dbbc2b625c.yaml"
+  name: "Rubrik - Instant Recovery 2"
+  dependencies:
+  - "xaas-resource-mapping/8c6e3e2f-e8c4-49fe-9dbb-f389de0f7399.yaml"
 - locator: "xaas-resource-action/0bfa24c1-0948-4be6-8264-1d0f05d4d063.yaml"
   name: "Rubrik - Live Mount"
   dependencies:
@@ -18,12 +22,12 @@ data:
   name: "Rubrik - On-Demand Snapshot"
   dependencies:
   - "xaas-resource-mapping/8c6e3e2f-e8c4-49fe-9dbb-f389de0f7399.yaml"
-- locator: "xaas-resource-action/655ad220-69e3-4e18-bcd8-369670a94fae.yaml"
-  name: "Rubrik - Instant Recovery"
-  dependencies:
-  - "xaas-resource-mapping/8c6e3e2f-e8c4-49fe-9dbb-f389de0f7399.yaml"
 - locator: "xaas-resource-action/76e42651-8b9a-4429-a01a-56c958f00f8a.yaml"
   name: "Rubrik - Recover File"
+  dependencies:
+  - "xaas-resource-mapping/8c6e3e2f-e8c4-49fe-9dbb-f389de0f7399.yaml"
+- locator: "xaas-resource-action/655ad220-69e3-4e18-bcd8-369670a94fae.yaml"
+  name: "Rubrik - Instant Recovery"
   dependencies:
   - "xaas-resource-mapping/8c6e3e2f-e8c4-49fe-9dbb-f389de0f7399.yaml"
 - locator: "xaas-resource-action/1b90cde7-80fb-4be6-a328-9f4415ad48f4.yaml"
@@ -33,4 +37,4 @@ data:
 - locator: "composite-blueprint/e1af101b-c2e1-48b4-8a41-b39a698d7cc2.yaml"
   name: "CentOS 7"
   description: "CentOS 7"
-exportTime: "2017-06-15T17:32:46.071Z"
+exportTime: "2017-07-06T16:55:23.655Z"

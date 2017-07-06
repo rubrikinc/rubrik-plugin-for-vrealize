@@ -1,12 +1,11 @@
 id:
-  id: "76e42651-8b9a-4429-a01a-56c958f00f8a"
-access: "external"
-workflowId: "d4e56a49-96b6-4eec-9e2a-2b877a39fec8"
-name: "Rubrik - Recover File"
-description: "Perform a file search, and recover the file to a Virtual Machine."
+  id: "e1de07ac-682f-4185-8641-e6dbbc2b625c"
+workflowId: "6c339e8e-4d92-4570-9c4e-c29b6b461c43"
+name: "Rubrik - Instant Recovery 2"
+description: "Submit this request to replace your VM with a previous version."
 catalogRequestInfoHidden: true
 forms:
-- id: "5347de07-7c35-4efb-ac5c-527ea82300fc"
+- id: "9d6ad839-10b4-49ff-a298-107813b94856"
   form:
     name: "Action form"
     designerLayout:
@@ -78,53 +77,34 @@ forms:
           - items:
             - type: "field"
               size: 2
-              id: "vmId"
-              label: "Rubrik ID of the VM"
-              description: "Rubrik ID of the VM"
+              id: "rubrikHost"
+              label: "RESTHost"
+              description: "Rubrik REST Host"
               dataType:
-                type: "primitive"
-                typeId: "STRING"
-              displayAdvice: "TEXTBOX"
+                type: "ref"
+                componentTypeId: "com.vmware.csp.core.designer.service"
+                classId: "REST:RESTHost"
+                label: "REST:RESTHost"
+              displayAdvice: "TREE"
+              permissibleValues:
+                type: "dynamic"
+                customAllowed: false
+                dependencies: []
               state:
                 dependencies: []
                 facets:
-                - type: "derivedValue"
-                  value:
-                    type: "externalValue"
-                    dynamicValueProviderInfo:
-                      providerEntityId: "com.rubrik.devops.actions/rubrik_GetVmId"
-                      parameterMappings:
-                        params:
-                        - key: "vm"
-                          value:
-                            type: "path"
-                            path: "vm"
-                        - key: "rubrikHost"
-                          value:
-                            type: "path"
-                            path: "rubrikHost"
-                        - key: "token"
-                          value:
-                            type: "path"
-                            path: "token"
                 - type: "visible"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: false
-                - type: "readOnly"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "refreshOnChange"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
-                      value: false
+                      value: true
                 - type: "editable"
                   value:
                     type: "constant"
@@ -145,8 +125,55 @@ forms:
             - type: "field"
               size: 2
               id: "token"
-              label: "Rubrik authentication token"
-              description: "Rubrik authentication token"
+              label: "token"
+              description: "token"
+              dataType:
+                type: "primitive"
+                typeId: "STRING"
+              displayAdvice: "TEXTBOX"
+              state:
+                dependencies: []
+                facets:
+                - type: "visible"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
+                - type: "readOnly"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+              initialStaticState:
+                dependencies: []
+                facets: []
+              labelDisplaySize: 2
+              customField: false
+              staticField: false
+              refreshOnChange: false
+              isMultiValued: false
+              columns: []
+              errors: []
+          - items:
+            - type: "field"
+              size: 2
+              id: "vmid"
+              label: "vmid"
+              description: "vmid"
               dataType:
                 type: "primitive"
                 typeId: "STRING"
@@ -188,42 +215,34 @@ forms:
               isMultiValued: false
               columns: []
               errors: []
+        - label: "Recovering VM :"
+          designerHidden: false
+          state:
+            dependencies: []
+            facets: []
+          rows:
           - items:
             - type: "field"
               size: 2
-              id: "rubrikHost"
-              label: "Rubrik Host"
-              description: "Rubrik Host"
+              id: "vmName"
+              label: "Name"
               dataType:
-                type: "ref"
-                classId: "REST:RESTHost"
-                label: "REST:RESTHost"
-              displayAdvice: "TREE"
-              permissibleValues:
-                type: "dynamic"
-                customAllowed: false
-                dependencies: []
+                type: "primitive"
+                typeId: "STRING"
+              displayAdvice: "TEXTBOX"
               state:
                 dependencies: []
                 facets:
-                - type: "visible"
+                - type: "derivedValue"
                   value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
+                    type: "path"
+                    path: "vm~name"
                 - type: "readOnly"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "editable"
                   value:
                     type: "constant"
@@ -234,13 +253,13 @@ forms:
                 dependencies: []
                 facets: []
               labelDisplaySize: 2
-              customField: false
+              customField: true
               staticField: false
               refreshOnChange: false
               isMultiValued: false
               columns: []
               errors: []
-        - label: "Enter a search string"
+        - label: "Choose a Recovery Point :"
           designerHidden: false
           state:
             dependencies: []
@@ -249,57 +268,9 @@ forms:
           - items:
             - type: "field"
               size: 2
-              id: "search"
-              label: "Search"
-              description: "Enter the first few characters of a filename, and we'll\
-                \ search the Rubrik for results"
-              dataType:
-                type: "primitive"
-                typeId: "STRING"
-              displayAdvice: "TEXTBOX"
-              state:
-                dependencies: []
-                facets:
-                - type: "mandatory"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
-              initialStaticState:
-                dependencies: []
-                facets: []
-              labelDisplaySize: 2
-              customField: false
-              staticField: false
-              refreshOnChange: false
-              isMultiValued: false
-              columns: []
-              errors: []
-        - label: "Select the file that you would like to recover"
-          designerHidden: false
-          state:
-            dependencies: []
-            facets: []
-          rows:
-          - items:
-            - type: "field"
-              size: 2
-              id: "requestedFile"
-              label: "File Name"
-              description: "Select the file you'd like from the search results"
+              id: "snapChoice"
+              label: "Select Snapshot"
+              description: "Snapshot Selector"
               dataType:
                 type: "primitive"
                 typeId: "STRING"
@@ -307,40 +278,10 @@ forms:
               permissibleValues:
                 type: "dynamic"
                 customAllowed: false
-                dependencies:
-                - "search"
-                - "vmId"
-                - "rubrikHost"
-                - "token"
-              permissibleValuesContext:
-                providerEntityId: "com.rubrik.devops.actions/rubrik_SearchFilesByVm"
-                parameterMappings:
-                  params:
-                  - key: "search"
-                    value:
-                      type: "path"
-                      path: "search"
-                  - key: "vmid"
-                    value:
-                      type: "path"
-                      path: "vmId"
-                  - key: "rubrikHost"
-                    value:
-                      type: "path"
-                      path: "rubrikHost"
-                  - key: "token"
-                    value:
-                      type: "path"
-                      path: "token"
+                dependencies: []
               state:
                 dependencies: []
                 facets:
-                - type: "mandatory"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "refreshOnChange"
                   value:
                     type: "constant"
@@ -363,7 +304,7 @@ forms:
               isMultiValued: false
               columns: []
               errors: []
-        - label: "Select the version of the file"
+        - label: "Would you like to Snapshot the current machine state?"
           designerHidden: false
           state:
             dependencies: []
@@ -371,40 +312,90 @@ forms:
           rows:
           - items:
             - type: "field"
+              size: 1
+              id: "snapshotPrior"
+              label: "Snapshot?"
+              description: "Should the existing machine have a Snapshot taken prior\
+                \ to recovery?"
+              dataType:
+                type: "primitive"
+                typeId: "BOOLEAN"
+              displayAdvice: "CHECKBOX"
+              state:
+                dependencies: []
+                facets:
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+              initialStaticState:
+                dependencies: []
+                facets: []
+              labelDisplaySize: 1
+              customField: false
+              staticField: false
+              refreshOnChange: false
+              isMultiValued: false
+              columns: []
+              errors: []
+          - items:
+            - type: "field"
               size: 2
-              id: "versionOption"
-              label: "Version list type"
+              id: "slaDomainToApply"
+              label: "SLA Domain to apply"
+              description: "SLA Domain to apply to On Demand Snapshot prior to Recovery"
               dataType:
                 type: "primitive"
                 typeId: "STRING"
-              displayAdvice: "RADIO_GROUP"
+              displayAdvice: "DROPDOWN"
               permissibleValues:
-                type: "static"
+                type: "dynamic"
                 customAllowed: false
-                values:
-                - underlyingValue:
-                    type: "string"
-                    value: "lastModified"
-                  label: "Modified"
-                - underlyingValue:
-                    type: "string"
-                    value: "allVersions"
-                  label: "All"
+                dependencies:
+                - "rubrikHost"
+                - "token"
+              permissibleValuesContext:
+                providerEntityId: "com.rubrik.devops.actions/rubrik_GetSlaList"
+                parameterMappings:
+                  params:
+                  - key: "rubrikHost"
+                    value:
+                      type: "path"
+                      path: "rubrikHost"
+                  - key: "token"
+                    value:
+                      type: "path"
+                      path: "token"
               state:
                 dependencies: []
                 facets:
                 - type: "visible"
                   value:
+                    type: "expression"
+                    operator:
+                      type: "equals"
+                    leftOperand:
+                      type: "path"
+                      path: "snapshotPrior"
+                    rightOperand:
+                      type: "constant"
+                      value:
+                        type: "boolean"
+                        value: true
+                - type: "refreshOnChange"
+                  value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: false
-                - type: "defaultValue"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "string"
-                      value: "lastModified"
                 - type: "editable"
                   value:
                     type: "constant"
@@ -415,81 +406,13 @@ forms:
                 dependencies: []
                 facets: []
               labelDisplaySize: 2
-              customField: true
+              customField: false
               staticField: false
               refreshOnChange: false
               isMultiValued: false
               columns: []
               errors: []
-          - items:
-            - type: "field"
-              size: 2
-              id: "requestedVersion"
-              label: "File Version"
-              description: "Select a version of the file, and hit submit!"
-              dataType:
-                type: "primitive"
-                typeId: "STRING"
-              displayAdvice: "DROPDOWN"
-              permissibleValues:
-                type: "dynamic"
-                customAllowed: false
-                dependencies:
-                - "requestedFile"
-                - "vmId"
-                - "rubrikHost"
-                - "versionOption"
-                - "token"
-              permissibleValuesContext:
-                providerEntityId: "com.rubrik.devops.actions/rubrik_GetFileVersions"
-                parameterMappings:
-                  params:
-                  - key: "requestedFile"
-                    value:
-                      type: "path"
-                      path: "requestedFile"
-                  - key: "vmid"
-                    value:
-                      type: "path"
-                      path: "vmId"
-                  - key: "rubrikHost"
-                    value:
-                      type: "path"
-                      path: "rubrikHost"
-                  - key: "type"
-                    value:
-                      type: "path"
-                      path: "versionOption"
-                  - key: "token"
-                    value:
-                      type: "path"
-                      path: "token"
-              state:
-                dependencies: []
-                facets:
-                - type: "mandatory"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
-              initialStaticState:
-                dependencies: []
-                facets: []
-              labelDisplaySize: 2
-              customField: true
-              staticField: false
-              refreshOnChange: false
-              isMultiValued: false
-              columns: []
-              errors: []
-        - label: "Optionally restore as different user"
+        - label: "Should the VM be migrated to the current datastore?"
           designerHidden: false
           state:
             dependencies: []
@@ -497,14 +420,14 @@ forms:
           rows:
           - items:
             - type: "field"
-              size: 2
-              id: "alternateDomain"
-              label: "Domain"
-              description: "alternateDomain"
+              size: 1
+              id: "vMotion"
+              label: "VMotion?"
+              description: "vMotion"
               dataType:
                 type: "primitive"
-                typeId: "STRING"
-              displayAdvice: "TEXTBOX"
+                typeId: "BOOLEAN"
+              displayAdvice: "CHECKBOX"
               state:
                 dependencies: []
                 facets:
@@ -523,118 +446,7 @@ forms:
               initialStaticState:
                 dependencies: []
                 facets: []
-              labelDisplaySize: 2
-              customField: false
-              staticField: false
-              refreshOnChange: false
-              isMultiValued: false
-              columns: []
-              errors: []
-          - items:
-            - type: "field"
-              size: 2
-              id: "alternateUser"
-              label: "User Name"
-              description: "alternateUser"
-              dataType:
-                type: "primitive"
-                typeId: "STRING"
-              displayAdvice: "TEXTBOX"
-              state:
-                dependencies: []
-                facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
-              initialStaticState:
-                dependencies: []
-                facets: []
-              labelDisplaySize: 2
-              customField: false
-              staticField: false
-              refreshOnChange: false
-              isMultiValued: false
-              columns: []
-              errors: []
-          - items:
-            - type: "field"
-              size: 2
-              id: "alternatePassword"
-              label: "Password"
-              description: "alternatePassword"
-              dataType:
-                type: "primitive"
-                typeId: "SECURE_STRING"
-              displayAdvice: "TEXTBOX"
-              state:
-                dependencies: []
-                facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
-              initialStaticState:
-                dependencies: []
-                facets: []
-              labelDisplaySize: 2
-              customField: false
-              staticField: false
-              refreshOnChange: false
-              isMultiValued: false
-              columns: []
-              errors: []
-        - label: "Optionally restore to alternate Path"
-          designerHidden: false
-          state:
-            dependencies: []
-            facets: []
-          rows:
-          - items:
-            - type: "field"
-              size: 2
-              id: "alternatePath"
-              label: "Path"
-              description: "alternatePath"
-              dataType:
-                type: "primitive"
-                typeId: "STRING"
-              displayAdvice: "TEXTBOX"
-              state:
-                dependencies: []
-                facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
-              initialStaticState:
-                dependencies: []
-                facets: []
-              labelDisplaySize: 2
+              labelDisplaySize: 1
               customField: false
               staticField: false
               refreshOnChange: false
@@ -652,7 +464,7 @@ version:
   minor: 0
   micro: 0
 inputParameter:
-  id: "38baec90-bccb-497a-b9fe-5e1f71289ea1"
+  id: "99e75b19-f0db-4cde-8b1e-3a0c56be1b1e"
   name: "vm"
   resourceType:
     id:

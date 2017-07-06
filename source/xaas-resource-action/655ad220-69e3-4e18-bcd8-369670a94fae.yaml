@@ -51,15 +51,15 @@ forms:
                     value:
                       type: "boolean"
                       value: false
+                - type: "derivedValue"
+                  value:
+                    type: "callback"
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: false
-                - type: "derivedValue"
-                  value:
-                    type: "callback"
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -93,18 +93,18 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "refreshOnChange"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: false
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -133,58 +133,18 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "refreshOnChange"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: false
-              initialStaticState:
-                dependencies: []
-                facets: []
-              labelDisplaySize: 2
-              customField: false
-              staticField: false
-              refreshOnChange: false
-              isMultiValued: false
-              columns: []
-              errors: []
-          - items:
-            - type: "field"
-              size: 2
-              id: "vraVm"
-              label: "vraVm"
-              description: "vraVm"
-              dataType:
-                type: "ref"
-                classId: "vCAC:VirtualMachine"
-                label: "vCAC:VirtualMachine"
-              displayAdvice: "TREE"
-              permissibleValues:
-                type: "dynamic"
-                customAllowed: false
-                dependencies: []
-              state:
-                dependencies: []
-                facets:
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -198,8 +158,8 @@ forms:
   scenario:
     usageClass: "SubmitUsage"
     id: "Resource.Action.Submit"
-status: "DRAFT"
-statusName: "Draft"
+status: "PUBLISHED"
+statusName: "Published"
 version:
   version: "0.0.0"
   major: 0
