@@ -6,7 +6,7 @@ name: "Rubrik - Live Mount"
 description: "Live Mount a previous version of the VM"
 catalogRequestInfoHidden: true
 forms:
-- id: "7e7d1277-d770-41da-955e-6b08656d44de"
+- id: "810906c5-8eb8-4d38-8d23-16b1bc5949e8"
   form:
     name: "Action form"
     designerLayout:
@@ -45,6 +45,12 @@ forms:
               state:
                 dependencies: []
                 facets:
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
                 - type: "visible"
                   value:
                     type: "constantClause"
@@ -54,12 +60,6 @@ forms:
                 - type: "derivedValue"
                   value:
                     type: "callback"
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -94,25 +94,25 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "mandatory"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "readOnly"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
-                - type: "refreshOnChange"
+                - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
-                - type: "editable"
+                - type: "mandatory"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "refreshOnChange"
                   value:
                     type: "constant"
                     value:
@@ -141,13 +141,19 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "mandatory"
+                - type: "readOnly"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
-                - type: "readOnly"
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "mandatory"
                   value:
                     type: "constant"
                     value:
@@ -159,12 +165,6 @@ forms:
                     value:
                       type: "boolean"
                       value: false
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -194,18 +194,18 @@ forms:
                     value:
                       type: "boolean"
                       value: true
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -233,18 +233,18 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -266,11 +266,11 @@ version:
   minor: 0
   micro: 0
 inputParameter:
-  id: "8c619de2-ee9b-4570-835e-a91657bfcffb"
+  id: "78f9e65e-5dc5-4496-9b9b-0f2f1eed7683"
   name: "vm"
   resourceType:
     id:
-      id: "8c6e3e2f-e8c4-49fe-9dbb-f389de0f7399"
+      id: "d123aab1-9094-4cf8-8a3d-f5bd59468c51"
       tenant: "_internal"
     name: "IaaS VC VirtualMachine"
     description: "IaaS vCenter Virtual Machine"

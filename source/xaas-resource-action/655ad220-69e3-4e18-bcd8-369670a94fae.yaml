@@ -6,7 +6,7 @@ name: "Rubrik - Instant Recovery"
 description: "Instant Recovery and vMotion of a Virtual Machine to a previous state"
 catalogRequestInfoHidden: true
 forms:
-- id: "7cc19b25-a583-4eb9-9fad-45206d42af05"
+- id: "25d5517c-3fb1-4d9e-a1ee-f0f070dffc25"
   form:
     name: "Action form"
     designerLayout:
@@ -45,6 +45,12 @@ forms:
               state:
                 dependencies: []
                 facets:
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
                 - type: "visible"
                   value:
                     type: "constantClause"
@@ -54,12 +60,6 @@ forms:
                 - type: "derivedValue"
                   value:
                     type: "callback"
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -93,18 +93,18 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -133,18 +133,18 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -158,19 +158,19 @@ forms:
   scenario:
     usageClass: "SubmitUsage"
     id: "Resource.Action.Submit"
-status: "PUBLISHED"
-statusName: "Published"
+status: "DRAFT"
+statusName: "Draft"
 version:
   version: "0.0.0"
   major: 0
   minor: 0
   micro: 0
 inputParameter:
-  id: "45be7b98-8ff4-4ee1-a202-cf21b416d2e0"
+  id: "c4103d95-bfed-488e-aaa9-565942925c73"
   name: "vm"
   resourceType:
     id:
-      id: "8c6e3e2f-e8c4-49fe-9dbb-f389de0f7399"
+      id: "d123aab1-9094-4cf8-8a3d-f5bd59468c51"
       tenant: "_internal"
     name: "IaaS VC VirtualMachine"
     description: "IaaS vCenter Virtual Machine"
