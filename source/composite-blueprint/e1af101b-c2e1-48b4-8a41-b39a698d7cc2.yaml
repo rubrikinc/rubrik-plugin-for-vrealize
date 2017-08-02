@@ -22,9 +22,9 @@ components:
         max: 1
         min: 1
       disks:
-      - capacity: 16
+      - capacity: 40
         custom_properties: null
-        id: 1497383734958
+        id: 1499369313719
         initial_location: ''
         is_clone: true
         label: Hard disk 1
@@ -37,7 +37,7 @@ components:
       max_volumes: {}
       memory:
         default: 2048
-        max: 2048
+        max: 4096
         min: 2048
       provisioning_workflow:
         fixed:
@@ -47,13 +47,13 @@ components:
       security_tags: []
       source_machine:
         fixed:
-          id: f24aafbe-a356-4c0d-b3e3-e618778b54d3
-          label: centos_template
+          id: 240e6d22-a24e-4bb0-a46d-bbc928bac697
+          label: centos7-template
       source_machine_name:
-        fixed: centos_template
+        fixed: centos7-template
       storage:
-        default: 16
-        max: 32
-        min: 16
+        default: 40
+        max: 40
+        min: 40
 layout:
   devopscentos7tmpl: 0,0

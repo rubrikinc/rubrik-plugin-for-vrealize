@@ -6,7 +6,7 @@ name: "Rubrik - Recover File"
 description: "Perform a file search, and recover the file to a Virtual Machine."
 catalogRequestInfoHidden: true
 forms:
-- id: "5347de07-7c35-4efb-ac5c-527ea82300fc"
+- id: "22e46da9-8ad6-4260-85a6-b8e1649635b4"
   form:
     name: "Action form"
     designerLayout:
@@ -45,6 +45,12 @@ forms:
               state:
                 dependencies: []
                 facets:
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
                 - type: "visible"
                   value:
                     type: "constantClause"
@@ -54,12 +60,6 @@ forms:
                 - type: "derivedValue"
                   value:
                     type: "callback"
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -88,6 +88,24 @@ forms:
               state:
                 dependencies: []
                 facets:
+                - type: "readOnly"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "visible"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
                 - type: "derivedValue"
                   value:
                     type: "externalValue"
@@ -107,30 +125,12 @@ forms:
                           value:
                             type: "path"
                             path: "token"
-                - type: "visible"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
-                - type: "readOnly"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "refreshOnChange"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: false
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -154,13 +154,19 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "visible"
+                - type: "readOnly"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
-                      value: false
-                - type: "readOnly"
+                      value: true
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "visible"
                   value:
                     type: "constant"
                     value:
@@ -172,12 +178,6 @@ forms:
                     value:
                       type: "boolean"
                       value: false
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -206,25 +206,25 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "visible"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "readOnly"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
-                - type: "refreshOnChange"
+                - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
-                - type: "editable"
+                - type: "visible"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "refreshOnChange"
                   value:
                     type: "constant"
                     value:
@@ -260,6 +260,12 @@ forms:
               state:
                 dependencies: []
                 facets:
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
                 - type: "mandatory"
                   value:
                     type: "constant"
@@ -267,12 +273,6 @@ forms:
                       type: "boolean"
                       value: true
                 - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
-                - type: "editable"
                   value:
                     type: "constant"
                     value:
@@ -335,6 +335,12 @@ forms:
               state:
                 dependencies: []
                 facets:
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
                 - type: "mandatory"
                   value:
                     type: "constant"
@@ -347,12 +353,6 @@ forms:
                     value:
                       type: "boolean"
                       value: false
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -393,6 +393,12 @@ forms:
               state:
                 dependencies: []
                 facets:
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
                 - type: "visible"
                   value:
                     type: "constant"
@@ -405,12 +411,6 @@ forms:
                     value:
                       type: "string"
                       value: "lastModified"
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -467,13 +467,13 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "mandatory"
+                - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
-                - type: "editable"
+                - type: "mandatory"
                   value:
                     type: "constant"
                     value:
@@ -508,18 +508,18 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -543,18 +543,18 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -578,18 +578,18 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -619,18 +619,18 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -652,11 +652,11 @@ version:
   minor: 0
   micro: 0
 inputParameter:
-  id: "38baec90-bccb-497a-b9fe-5e1f71289ea1"
+  id: "6f29b6e1-028a-4b1b-9ce0-849dd51fcc8f"
   name: "vm"
   resourceType:
     id:
-      id: "8c6e3e2f-e8c4-49fe-9dbb-f389de0f7399"
+      id: "d123aab1-9094-4cf8-8a3d-f5bd59468c51"
       tenant: "_internal"
     name: "IaaS VC VirtualMachine"
     description: "IaaS vCenter Virtual Machine"

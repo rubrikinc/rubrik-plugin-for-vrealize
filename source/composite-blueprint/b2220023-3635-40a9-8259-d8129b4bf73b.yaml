@@ -23,7 +23,8 @@ components:
         min: 1
       disks:
       - capacity: 40
-        id: 0
+        custom_properties: null
+        id: 1499369940829
         initial_location: ''
         is_clone: true
         label: Hard disk 1
@@ -35,9 +36,9 @@ components:
       max_network_adapters: {}
       max_volumes: {}
       memory:
-        default: 2048
-        max: 2048
-        min: 2048
+        default: 4096
+        max: 4096
+        min: 4096
       provisioning_workflow:
         fixed:
           id: CloneWorkflow
@@ -46,10 +47,10 @@ components:
       security_tags: []
       source_machine:
         fixed:
-          id: 4eaf6819-d687-4755-b47c-3a45e78619b5
-          label: devops-win2k12-sysprep
+          id: 3cb6d759-dac9-43f1-a7cf-0e93df887271
+          label: windows_srv_std_2k12r2_patched
       source_machine_name:
-        fixed: devops-win2k12-sysprep
+        fixed: windows_srv_std_2k12r2_patched
       storage:
         default: 40
         max: 40

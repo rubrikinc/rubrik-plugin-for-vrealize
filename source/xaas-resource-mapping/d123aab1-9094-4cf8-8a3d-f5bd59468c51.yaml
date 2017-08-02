@@ -1,5 +1,5 @@
 id:
-  id: "8c6e3e2f-e8c4-49fe-9dbb-f389de0f7399"
+  id: "d123aab1-9094-4cf8-8a3d-f5bd59468c51"
 name: "IaaS VC VirtualMachine"
 description: "IaaS vCenter Virtual Machine"
 vcoType: "VC:VirtualMachine"

@@ -6,7 +6,7 @@ name: "Rubrik - On-Demand Snapshot"
 description: "Initiate an on-demand backup job and wait for a success/failure response"
 catalogRequestInfoHidden: true
 forms:
-- id: "0fad0ac1-b48b-480c-aa06-52067e9ae315"
+- id: "19261bf2-50b6-4506-8937-d5c2b86ffa98"
   form:
     name: "Submitted action details form"
     designerLayout:
@@ -45,6 +45,12 @@ forms:
               state:
                 dependencies: []
                 facets:
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
                 - type: "visible"
                   value:
                     type: "constantClause"
@@ -54,12 +60,6 @@ forms:
                 - type: "derivedValue"
                   value:
                     type: "callback"
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -76,46 +76,6 @@ forms:
             dependencies: []
             facets: []
           rows:
-          - items:
-            - type: "field"
-              size: 2
-              id: "token"
-              label: "Rubrik authentication token"
-              description: "Rubrik authentication token"
-              dataType:
-                type: "primitive"
-                typeId: "STRING"
-              state:
-                dependencies: []
-                facets:
-                - type: "readOnly"
-                  value:
-                    type: "constantClause"
-                    value:
-                      type: "boolean"
-                      value: true
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
-              initialStaticState:
-                dependencies: []
-                facets: []
-              labelDisplaySize: 2
-              customField: false
-              staticField: false
-              refreshOnChange: false
-              isMultiValued: false
-              columns: []
-              errors: []
           - items:
             - type: "field"
               size: 2
@@ -140,9 +100,43 @@ forms:
                     value:
                       type: "boolean"
                       value: true
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
                 - type: "refreshOnChange"
                   value:
                     type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+              initialStaticState:
+                dependencies: []
+                facets: []
+              labelDisplaySize: 2
+              customField: false
+              staticField: false
+              refreshOnChange: false
+              isMultiValued: false
+              columns: []
+              errors: []
+          - items:
+            - type: "field"
+              size: 2
+              id: "token"
+              label: "Rubrik authentication token"
+              description: "Rubrik authentication token"
+              dataType:
+                type: "primitive"
+                typeId: "STRING"
+              state:
+                dependencies: []
+                facets:
+                - type: "readOnly"
+                  value:
+                    type: "constantClause"
                     value:
                       type: "boolean"
                       value: true
@@ -152,6 +146,12 @@ forms:
                     value:
                       type: "boolean"
                       value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -175,6 +175,12 @@ forms:
               state:
                 dependencies: []
                 facets:
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
                 - type: "derivedValue"
                   value:
                     type: "externalValue"
@@ -200,12 +206,6 @@ forms:
                     value:
                       type: "boolean"
                       value: false
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -233,11 +233,11 @@ version:
   minor: 0
   micro: 0
 inputParameter:
-  id: "df341e21-8e37-4112-82ae-e5ff40df0e2b"
+  id: "2f27bb78-8451-42cf-a324-6094ce15547b"
   name: "vm"
   resourceType:
     id:
-      id: "8c6e3e2f-e8c4-49fe-9dbb-f389de0f7399"
+      id: "d123aab1-9094-4cf8-8a3d-f5bd59468c51"
       tenant: "_internal"
     name: "IaaS VC VirtualMachine"
     description: "IaaS vCenter Virtual Machine"
