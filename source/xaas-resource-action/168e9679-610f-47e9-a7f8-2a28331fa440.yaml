@@ -106,6 +106,12 @@ forms:
                     value:
                       type: "boolean"
                       value: true
+                - type: "visible"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
                 - type: "refreshOnChange"
                   value:
                     type: "constant"
