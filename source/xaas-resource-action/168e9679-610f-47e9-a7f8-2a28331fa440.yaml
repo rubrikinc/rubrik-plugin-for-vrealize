@@ -80,8 +80,7 @@ forms:
             - type: "field"
               size: 2
               id: "rubrikHost"
-              label: "REST call to GET /job/instance/{id}"
-              description: "REST call to GET /job/instance/{id}"
+              label: "Rubrik Host"
               dataType:
                 type: "ref"
                 classId: "REST:RESTHost"
@@ -133,10 +132,11 @@ forms:
               size: 2
               id: "token"
               label: "Rubrik authentication token"
-              description: "Rubrik authentication token"
+              description: "Rubrik Authentication token"
               dataType:
                 type: "primitive"
                 typeId: "STRING"
+              displayAdvice: "TEXTBOX"
               state:
                 dependencies: []
                 facets:
