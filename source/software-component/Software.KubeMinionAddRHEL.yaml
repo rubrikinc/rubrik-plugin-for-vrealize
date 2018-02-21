@@ -1,0 +1,107 @@
+'@type': "SoftwareComponentType"
+createdDate: "2018-02-18T23:20:05.779Z"
+lastUpdated: "2018-02-18T23:20:05.843Z"
+id: "Software.KubeMinionAddRHEL"
+name: "Kube-Minion-Add-RHEL"
+description: "Adds an additional Minion to a Kubernetes deployment. This requires\
+  \ the Kubernetes Blueprint. "
+publishStatus: "PUBLISHED"
+publishStatusName: "Published"
+schema:
+  fields:
+  - id: "host"
+    label: "Container"
+    description: ""
+    dataType:
+      type: "ref"
+      componentTypeId: "com.vmware.csp.iaas.blueprint.service"
+      classId: "Infrastructure.Machine.Schema"
+      label: "Machine"
+    state:
+      dependencies: []
+      facets:
+      - type: "visible"
+        value:
+          type: "constantClause"
+          value:
+            type: "boolean"
+            value: false
+      - type: "internal"
+        value:
+          type: "constantClause"
+          value:
+            type: "boolean"
+            value: true
+      - type: "mandatory"
+        value:
+          type: "constant"
+          value:
+            type: "boolean"
+            value: true
+    isMultiValued: false
+  - id: "master_ip"
+    label: "master_ip"
+    description: "Enter the Kubernetes Master IP address:"
+    dataType:
+      type: "primitive"
+      typeId: "STRING"
+    state:
+      dependencies: []
+      facets:
+      - type: "defaultValue"
+        value:
+          type: "constant"
+          value:
+            type: "string"
+            value: ""
+      - type: "mandatory"
+        value:
+          type: "constant"
+          value:
+            type: "boolean"
+            value: true
+    isMultiValued: false
+containerFieldId: "host"
+lifecycleTasks:
+- createdDate: "2018-02-18T23:20:05.780Z"
+  lastUpdated: "2018-02-18T23:20:05.780Z"
+  script:
+    scriptContent: "#!/bin/bash\n\n#Configure Kubernetes\nsed -i '\n/^KUBE_MASTER=/\
+      \ s|=.*|=\"--master=http://'\"$master_ip\"':8080\"|\n' /etc/kubernetes/config\n\
+      cat /etc/kubernetes/config\n#Get My IP adress and store as variable\nmy_ip=$(hostname\
+      \  -I | cut -f1 -d' ')\necho my IP address is $my_ip\n#Configure Kublet\nsed\
+      \ -i '\n/^KUBELET_ADDRESS=/ s/=.*/=\"0.0.0.0\"/\n/^KUBELET_API_SERVER=/ s|=.*|=\"\
+      --api_servers=http://'\"$master_ip\"':8080\"|\n/^KUBELET_HOSTNAME=/ s/=.*/=\"\
+      --hostname_override='$my_ip'\"/\n' /etc/kubernetes/kubelet\ncat /etc/kubernetes/kubelet\n\
+      \n#configure flanneld\nsed -i '\n/^FLANNEL_ETCD=/ s|=.*|=\"http://'\"$master_ip\"\
+      ':2379\"|\n' /etc/sysconfig/flanneld\ncat /etc/sysconfig/flanneld\n\n#Fix Docker\
+      \ storage\nrm -f /etc/sysconfig/docker-storage\necho \"DOCKER_STORAGE_OPTIONS=\
+      \ -s overlay\" > /etc/sysconfig/docker-storage"
+    isRebootAfter: false
+    scriptTypeId: "Bash"
+  taskDescriptorRef:
+    id: "CONFIGURE"
+    label: "Configure"
+- createdDate: "2018-02-18T23:20:05.780Z"
+  lastUpdated: "2018-02-18T23:20:05.780Z"
+  script:
+    scriptContent: "#!/bin/bash\nsystemctl disable firewalld\nsystemctl stop firewalld\n\
+      yum -y install kubernetes-node flannel"
+    isRebootAfter: false
+    scriptTypeId: "Bash"
+  taskDescriptorRef:
+    id: "INSTALL"
+    label: "Install"
+- createdDate: "2018-02-18T23:20:05.781Z"
+  lastUpdated: "2018-02-18T23:20:05.781Z"
+  script:
+    scriptContent: "#!/bin/bash\nsystemctl enable docker\nsystemctl enable flanneld\n\
+      systemctl enable kubelet\nsystemctl enable kube-proxy\n\nsystemctl start docker\n\
+      systemctl start flanneld\nsystemctl start kubelet\nsystemctl start kube-proxy\n\
+      \nsystemctl status docker\nsystemctl status flanneld\nsystemctl status kubelet\n\
+      systemctl status kube-proxy"
+    isRebootAfter: false
+    scriptTypeId: "Bash"
+  taskDescriptorRef:
+    id: "START"
+    label: "Start"
