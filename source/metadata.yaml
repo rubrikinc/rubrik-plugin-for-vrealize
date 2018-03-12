@@ -44,4 +44,4 @@ data:
   description: "AddMinion"
   dependencies:
   - "software-component/Software.KubeMinionAddRHEL.yaml"
-exportTime: "2018-03-12T23:46:42.447Z"
+exportTime: "2018-03-12T23:47:02.608Z"
