@@ -1,0 +1,116 @@
+'@type': "SoftwareComponentType"
+createdDate: "2018-02-18T21:13:04.382Z"
+lastUpdated: "2018-02-18T21:13:04.790Z"
+id: "Software.KubernetesMasterRHEL7"
+name: "Kube-Master-RHEL7"
+description: "Installs and configures Kubernetes Master"
+publishStatus: "PUBLISHED"
+publishStatusName: "Published"
+schema:
+  fields:
+  - id: "my_ip"
+    label: "my_ip"
+    description: "IP address of the host"
+    dataType:
+      type: "primitive"
+      typeId: "STRING"
+    state:
+      dependencies: []
+      facets:
+      - type: "defaultValue"
+        value:
+          type: "constant"
+          value:
+            type: "string"
+            value: ""
+      - type: "mandatory"
+        value:
+          type: "constant"
+          value:
+            type: "boolean"
+            value: true
+    isMultiValued: false
+  - id: "host"
+    label: "Container"
+    description: ""
+    dataType:
+      type: "ref"
+      componentTypeId: "com.vmware.csp.iaas.blueprint.service"
+      classId: "Infrastructure.Machine.Schema"
+      label: "Machine"
+    state:
+      dependencies: []
+      facets:
+      - type: "visible"
+        value:
+          type: "constantClause"
+          value:
+            type: "boolean"
+            value: false
+      - type: "internal"
+        value:
+          type: "constantClause"
+          value:
+            type: "boolean"
+            value: true
+      - type: "mandatory"
+        value:
+          type: "constant"
+          value:
+            type: "boolean"
+            value: true
+    isMultiValued: false
+containerFieldId: "host"
+lifecycleTasks:
+- createdDate: "2018-02-18T21:13:04.388Z"
+  lastUpdated: "2018-02-18T21:13:04.388Z"
+  script:
+    scriptContent: "#!/bin/bash\n#disable and stop the firewall\nsystemctl disable\
+      \ firewalld\nsystemctl stop firewalld\n#\n#Install etcd, Kubernetes-Master and\
+      \ flannel\nyum -y install etcd kubernetes-master flannel\nopenssl genrsa -out\
+      \ /tmp/serviceaccount.key 2048"
+    isRebootAfter: false
+    scriptTypeId: "Bash"
+  taskDescriptorRef:
+    id: "INSTALL"
+    label: "Install"
+- createdDate: "2018-02-18T21:13:04.389Z"
+  lastUpdated: "2018-02-18T21:13:04.389Z"
+  script:
+    scriptContent: "#!/bin/bash\n#\n#Enable Kubernetes and flannld services to start\
+      \ at boot\nsystemctl enable kube-apiserver\nsystemctl enable kube-controller-manager\n\
+      systemctl enable kube-scheduler\nsystemctl enable flanneld\n#\n#Start Kubernetes\
+      \ and flannld services \nsystemctl start kube-apiserver\nsystemctl start kube-controller-manager\n\
+      systemctl start kube-scheduler\nsystemctl start flanneld\n#\n#Print Status of\
+      \ Kubernetes and flannld services \nsystemctl status kube-apiserver\nsystemctl\
+      \ status kube-controller-manager\nsystemctl status kube-scheduler\nsystemctl\
+      \ status flanneld"
+    isRebootAfter: false
+    scriptTypeId: "Bash"
+  taskDescriptorRef:
+    id: "START"
+    label: "Start"
+- createdDate: "2018-02-18T21:13:04.389Z"
+  lastUpdated: "2018-02-18T21:13:04.389Z"
+  script:
+    scriptContent: "#!/bin/bash\n#Update etcd settings\nsed -i '\n/^ETCD_LISTEN_CLIENT_URLS=/\
+      \ s|=.*|=\"http://'\"0.0.0.0\"':2379\"|\n/^ETCD_ADVERTISE_CLIENT_URLS=/ s|=.*|=\"\
+      http://'\"0.0.0.0\"':2379\"|\n' /etc/etcd/etcd.conf\ncat /etc/etcd/etcd.conf\n\
+      #\n#Update Kubernetes setting\nsed -i '\n/^KUBE_MASTER=/ s|=.*|=\"--master=http://'\"\
+      $my_ip\"':8080\"|\n' /etc/kubernetes/config\ncat /etc/kubernetes/config\n#\n\
+      #Update Kubernetes API  setting\nsed -i '\n/^KUBE_API_ADDRESS=/ s/=.*/=\"--address=0.0.0.0\"\
+      /\n/^KUBE_ETCD_SERVERS=/ s|=.*|=\"--etcd_servers=http://'\"$my_ip\"':2379\"\
+      |\n/^KUBE_API_ARGS=/ s|=.*|=\"--service_account_key_file=/tmp/serviceaccount.key\"\
+      |\n' /etc/kubernetes/apiserver\ncat /etc/kubernetes/apiserver\n#\n#Update Kube-Controller\
+      \ Settings\nrm -f  /etc/kubernetes/controller-manager\necho 'KUBE_CONTROLLER_MANAGER_ARGS=\"\
+      --service_account_private_key_file=/tmp/serviceaccount.key' > /etc/kubernetes/controller-manager\
+      \ \n#Update Flannel setting\nsed -i '\n/^FLANNEL_ETCD=/ s|=.*|=\"http://'\"\
+      $my_ip\"':2379\"|\n' /etc/sysconfig/flanneld\ncat /etc/sysconfig/flanneld\n\
+      #\n#Enable and start etcd\nsystemctl enable etcd\nsystemctl start etcd \nsleep\
+      \ 20\n#\n#Create the overlay network\netcdctl mk /atomic.io/network/config '{\"\
+      Network\":\"172.17.0.0/16\"}'"
+    isRebootAfter: false
+    scriptTypeId: "Bash"
+  taskDescriptorRef:
+    id: "CONFIGURE"
+    label: "Configure"
