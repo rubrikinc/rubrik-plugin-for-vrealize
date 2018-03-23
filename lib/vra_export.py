@@ -88,6 +88,7 @@ class VRASession:
         obj = {}
         obj["contents"] = []
         for output in list['content']:
+          print("Checking " + output['name'])
           if (output['tenantId'] == self.tenant) and ("ubrik" in output['name']):
             print(output['name'])
             obj["name"]=self.packageName
