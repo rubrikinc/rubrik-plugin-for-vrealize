@@ -89,7 +89,7 @@ class VRASession:
         obj["contents"] = []
         for output in list['content']:
           if output['tenantId'] == self.tenant:
-            print("Output - " + output['name'])
+            print(output['name'])
             obj["name"]=self.packageName
             obj["description"]=self.packageName
             obj["contents"].append(output['id'])
