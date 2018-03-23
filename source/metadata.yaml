@@ -3,12 +3,8 @@ productVersion: "7.3.0-SNAPSHOT"
 data:
 - locator: "property-group/rubrik_SetSLAPG.yaml"
   name: "rubrik_SetSLAPG"
-- locator: "xaas-resource-action/1b90cde7-80fb-4be6-a328-9f4415ad48f4.yaml"
-  name: "Rubrik - SLA Domain"
-  dependencies:
-  - "xaas-resource-mapping/d123aab1-9094-4cf8-8a3d-f5bd59468c51.yaml"
-- locator: "xaas-resource-mapping/d123aab1-9094-4cf8-8a3d-f5bd59468c51.yaml"
-  name: "IaaS VC VirtualMachine"
+- locator: "xaas-blueprint/99807690-7828-4926-8982-9ff448266b16.yaml"
+  name: "Rubrik - Add Cluster Instance"
 - locator: "software-component/Software.KubeMinionAddRHEL.yaml"
   name: "Kube-Minion-Add-RHEL"
   description: "Adds an additional Minion to a Kubernetes deployment. This requires\
@@ -16,10 +12,14 @@ data:
 - locator: "composite-blueprint/b2220023-3635-40a9-8259-d8129b4bf73b.yaml"
   name: "Windows 2012"
   description: "Windows 2012"
+- locator: "xaas-blueprint/1cfb201e-fd47-4803-b059-fe374c4ba273.yaml"
+  name: "Rubrik - Remove Cluster instance"
 - locator: "xaas-resource-action/168e9679-610f-47e9-a7f8-2a28331fa440.yaml"
   name: "Rubrik - On-Demand Snapshot"
   dependencies:
   - "xaas-resource-mapping/d123aab1-9094-4cf8-8a3d-f5bd59468c51.yaml"
+- locator: "xaas-resource-mapping/d123aab1-9094-4cf8-8a3d-f5bd59468c51.yaml"
+  name: "IaaS VC VirtualMachine"
 - locator: "composite-blueprint/e1af101b-c2e1-48b4-8a41-b39a698d7cc2.yaml"
   name: "CentOS 7"
   description: "CentOS 7"
@@ -44,4 +44,4 @@ data:
   description: "AddMinion"
   dependencies:
   - "software-component/Software.KubeMinionAddRHEL.yaml"
-exportTime: "2018-03-12T23:56:08.861Z"
+exportTime: "2018-03-23T13:48:10.159Z"

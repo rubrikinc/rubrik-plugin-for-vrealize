@@ -24,7 +24,7 @@ components:
       disks:
       - capacity: 40
         custom_properties: null
-        id: 1499369313719
+        id: 1520954383720
         initial_location: ''
         is_clone: true
         label: Hard disk 1
@@ -47,10 +47,10 @@ components:
       security_tags: []
       source_machine:
         fixed:
-          id: 240e6d22-a24e-4bb0-a46d-bbc928bac697
-          label: centos7-template
+          id: a9a3f0ae-ad2e-4ae7-a21d-a415f7d40621
+          label: centos-7-vra-rbs
       source_machine_name:
-        fixed: centos7-template
+        fixed: centos-7-vra-rbs
       storage:
         default: 40
         max: 40
