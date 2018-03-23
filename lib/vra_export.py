@@ -2,6 +2,7 @@
 import requests, json, sys, pprint, time,argparse
 from getpass import getpass
 import pprint
+pp = pprint.PrettyPrinter(indent=4)
 
 
 class VRASession:
