@@ -86,7 +86,6 @@ class VRASession:
 
     def create_package(self):
         list = session.get_call("/content-management-service/api/contents?limit=200")
-        pp.pprint(list)
         obj = {}
         obj["contents"] = []
         for output in list['content']:
