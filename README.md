@@ -1,5 +1,5 @@
-#vRealize Automation Integration Requirements
-##Non Production Environment
+# vRealize Automation Integration Requirements
+## Non Production Environment
 * Rubrik 4.x (preferred)
 * vRA 7.3 or above
 * Microsoft SQL Server 2008+
@@ -10,7 +10,7 @@
 * Functional vCenter Integration
 * Functional vRA Integration
 * vCenter 6.0 or above
-##Development Workstation
+## Development Workstation
 * VMware’s Cloudclient - https://code.vmware.com/tool/cloudclient/4.4.0
 * VMware’s vRO Workflow Designer
 * Network Access and Credentials for- vRealize Infrastructure
