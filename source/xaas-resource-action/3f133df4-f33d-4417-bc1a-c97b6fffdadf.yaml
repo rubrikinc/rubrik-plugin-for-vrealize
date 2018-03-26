@@ -1,11 +1,12 @@
 id:
   id: "3f133df4-f33d-4417-bc1a-c97b6fffdadf"
+access: "external"
 workflowId: "6ea36d23-6827-4d6a-b06f-c2505d12e653"
 name: "Rubrik - Assign VM to SLA Domain - Dynamic"
 description: "Assign a virtual machine to a Rubrik SLA Domain"
 catalogRequestInfoHidden: true
 forms:
-- id: "44910903-8563-4023-b447-29ee9e7c35a3"
+- id: "cadfd9e5-b9cc-4ebf-a586-66970fa1c7f9"
   form:
     name: "Action form"
     designerLayout:
@@ -105,6 +106,17 @@ forms:
                     value:
                       type: "boolean"
                       value: true
+                - type: "derivedValue"
+                  value:
+                    type: "externalValue"
+                    dynamicValueProviderInfo:
+                      providerEntityId: "com.rubrik.devops.actions/rubrik_GetRestHost"
+                      parameterMappings:
+                        params:
+                        - key: "vm"
+                          value:
+                            type: "path"
+                            path: "vm"
               initialStaticState:
                 dependencies: []
                 facets:
@@ -131,7 +143,8 @@ forms:
                 type: "primitive"
                 typeId: "STRING"
               state:
-                dependencies: []
+                dependencies:
+                - "yourRestHost"
                 facets:
                 - type: "refreshOnChange"
                   value:
@@ -145,6 +158,21 @@ forms:
                     value:
                       type: "boolean"
                       value: true
+                - type: "derivedValue"
+                  value:
+                    type: "externalValue"
+                    dynamicValueProviderInfo:
+                      providerEntityId: "com.rubrik.devops.actions/rubrik_GetVmId_N"
+                      parameterMappings:
+                        params:
+                        - key: "vm"
+                          value:
+                            type: "path"
+                            path: "vm"
+                        - key: "rubrikHost"
+                          value:
+                            type: "path"
+                            path: "yourRestHost"
               initialStaticState:
                 dependencies: []
                 facets:
@@ -174,7 +202,16 @@ forms:
               permissibleValues:
                 type: "dynamic"
                 customAllowed: false
-                dependencies: []
+                dependencies:
+                - "yourRestHost"
+              permissibleValuesContext:
+                providerEntityId: "com.rubrik.devops.actions/rubrik_GetSlaList_N"
+                parameterMappings:
+                  params:
+                  - key: "rubrikHost"
+                    value:
+                      type: "path"
+                      path: "yourRestHost"
               state:
                 dependencies: []
                 facets:
@@ -192,13 +229,7 @@ forms:
                       value: true
               initialStaticState:
                 dependencies: []
-                facets:
-                - type: "visible"
-                  value:
-                    type: "constantClause"
-                    value:
-                      type: "boolean"
-                      value: true
+                facets: []
               labelDisplaySize: 2
               customField: false
               staticField: false
@@ -217,7 +248,7 @@ version:
   minor: 0
   micro: 0
 inputParameter:
-  id: "7fb9c152-9195-4797-807b-2ebc03faca5e"
+  id: "886c9be6-8232-4747-bdf4-9587baeb1116"
   name: "vm"
   resourceType:
     id:

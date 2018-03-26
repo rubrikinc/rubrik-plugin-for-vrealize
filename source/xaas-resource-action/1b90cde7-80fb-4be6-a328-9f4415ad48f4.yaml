@@ -7,7 +7,7 @@ description: "View the current assignment, and update the assignment of a virtua
   \ machine to a Rubrik SLA Domain"
 catalogRequestInfoHidden: true
 forms:
-- id: "d735c39a-c7b7-4eb9-ab63-5d1a8e2a6d3d"
+- id: "4f6ebdf7-b052-4c05-be0d-5efb36cd619c"
   form:
     name: "Action form"
     designerLayout:
@@ -359,7 +359,7 @@ version:
   minor: 0
   micro: 0
 inputParameter:
-  id: "c2b62324-7cf7-429a-8119-c1fd2b57aad7"
+  id: "a0492c0b-583d-4a81-8905-d778c47d37b6"
   name: "vm"
   resourceType:
     id:
