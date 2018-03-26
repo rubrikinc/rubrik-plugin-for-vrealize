@@ -6,7 +6,7 @@ name: "Rubrik - Recover File"
 description: "Perform a file search, and recover the file to a Virtual Machine."
 catalogRequestInfoHidden: true
 forms:
-- id: "29bf56da-19fd-4b51-8570-1d2a1f00ed22"
+- id: "8d2968c1-7789-4acd-b92f-54be7ff7f483"
   form:
     name: "Action form"
     designerLayout:
@@ -652,7 +652,7 @@ version:
   minor: 0
   micro: 0
 inputParameter:
-  id: "cb4c1490-5419-4fe2-b3df-37663b9a8fc5"
+  id: "72033a5d-48d4-4449-8473-ab7f7238f223"
   name: "vm"
   resourceType:
     id:

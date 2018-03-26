@@ -6,7 +6,7 @@ name: "Rubrik - Assign VM to SLA Domain - Dynamic"
 description: "Assign a virtual machine to a Rubrik SLA Domain"
 catalogRequestInfoHidden: true
 forms:
-- id: "21e795b8-316b-45f8-8e73-969d1ec215c7"
+- id: "3aabe075-8bd5-4a4a-8e78-ca436f8b8537"
   form:
     name: "Action form"
     designerLayout:
@@ -213,15 +213,14 @@ forms:
                       type: "path"
                       path: "yourRestHost"
               state:
-                dependencies:
-                - "yourRestHost"
+                dependencies: []
                 facets:
                 - type: "refreshOnChange"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
-                      value: true
+                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
@@ -249,7 +248,7 @@ version:
   minor: 0
   micro: 0
 inputParameter:
-  id: "4b023169-1378-418a-9cc2-edb4ebe64005"
+  id: "c37abdcb-af29-48cb-868a-f02845fced44"
   name: "vm"
   resourceType:
     id:

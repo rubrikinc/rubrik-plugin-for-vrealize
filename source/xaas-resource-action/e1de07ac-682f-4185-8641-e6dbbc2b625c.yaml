@@ -6,7 +6,7 @@ name: "Rubrik - Instant Recovery"
 description: "Submit this request to replace your VM with a previous version."
 catalogRequestInfoHidden: true
 forms:
-- id: "97ef233f-ea07-4543-93da-296e2ab73c6f"
+- id: "b4dac943-346d-4855-ba3c-8226df99a90f"
   form:
     name: "Action form"
     designerLayout:
@@ -465,7 +465,7 @@ version:
   minor: 0
   micro: 0
 inputParameter:
-  id: "cdaf89ab-2014-44b9-908a-8724b6d16dc4"
+  id: "8c08e22e-a88a-4921-9299-2e1ba2dd4a9c"
   name: "vm"
   resourceType:
     id:

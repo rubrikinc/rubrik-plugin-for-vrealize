@@ -6,7 +6,7 @@ name: "Rubrik - Add Cluster Instance"
 description: "Adds a Rubrik REST host to the Orchestrator inventory."
 catalogRequestInfoHidden: true
 forms:
-- id: "80b29017-a497-4cd8-8c71-19364658b47f"
+- id: "151c4c84-ee1f-48f0-8bd6-ec183bea5300"
   form:
     name: "Request form"
     designerLayout:
