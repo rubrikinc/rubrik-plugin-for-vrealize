@@ -1,36 +1,36 @@
 name: "Rubrik_VRA"
 productVersion: "7.3.1-SNAPSHOT"
 data:
-- locator: "xaas-resource-action/76e42651-8b9a-4429-a01a-56c958f00f8a.yaml"
-  name: "Rubrik - Recover File"
-  dependencies:
-  - "xaas-resource-mapping/d123aab1-9094-4cf8-8a3d-f5bd59468c51.yaml"
-- locator: "xaas-resource-mapping/d123aab1-9094-4cf8-8a3d-f5bd59468c51.yaml"
-  name: "IaaS VC VirtualMachine"
-- locator: "xaas-resource-action/e1de07ac-682f-4185-8641-e6dbbc2b625c.yaml"
-  name: "Rubrik - Instant Recovery"
-  dependencies:
-  - "xaas-resource-mapping/d123aab1-9094-4cf8-8a3d-f5bd59468c51.yaml"
 - locator: "property-group/rubrik_SetSLAPG.yaml"
   name: "rubrik_SetSLAPG"
 - locator: "xaas-blueprint/99807690-7828-4926-8982-9ff448266b16.yaml"
   name: "Rubrik - Add Cluster Instance"
+- locator: "xaas-resource-action/1b90cde7-80fb-4be6-a328-9f4415ad48f4.yaml"
+  name: "Rubrik - SLA Domain"
+  dependencies:
+  - "xaas-resource-mapping/d123aab1-9094-4cf8-8a3d-f5bd59468c51.yaml"
+- locator: "xaas-resource-mapping/d123aab1-9094-4cf8-8a3d-f5bd59468c51.yaml"
+  name: "IaaS VC VirtualMachine"
 - locator: "xaas-resource-action/3f133df4-f33d-4417-bc1a-c97b6fffdadf.yaml"
   name: "Rubrik - Assign VM to SLA Domain - Dynamic"
+  dependencies:
+  - "xaas-resource-mapping/d123aab1-9094-4cf8-8a3d-f5bd59468c51.yaml"
+- locator: "xaas-blueprint/1cfb201e-fd47-4803-b059-fe374c4ba273.yaml"
+  name: "Rubrik - Remove Cluster instance"
+- locator: "xaas-resource-action/76e42651-8b9a-4429-a01a-56c958f00f8a.yaml"
+  name: "Rubrik - Recover File"
+  dependencies:
+  - "xaas-resource-mapping/d123aab1-9094-4cf8-8a3d-f5bd59468c51.yaml"
+- locator: "xaas-resource-action/e1de07ac-682f-4185-8641-e6dbbc2b625c.yaml"
+  name: "Rubrik - Instant Recovery"
+  dependencies:
+  - "xaas-resource-mapping/d123aab1-9094-4cf8-8a3d-f5bd59468c51.yaml"
+- locator: "xaas-resource-action/0bfa24c1-0948-4be6-8264-1d0f05d4d063.yaml"
+  name: "Rubrik - Live Mount"
   dependencies:
   - "xaas-resource-mapping/d123aab1-9094-4cf8-8a3d-f5bd59468c51.yaml"
 - locator: "xaas-resource-action/168e9679-610f-47e9-a7f8-2a28331fa440.yaml"
   name: "Rubrik - On-Demand Snapshot"
   dependencies:
   - "xaas-resource-mapping/d123aab1-9094-4cf8-8a3d-f5bd59468c51.yaml"
-- locator: "xaas-blueprint/1cfb201e-fd47-4803-b059-fe374c4ba273.yaml"
-  name: "Rubrik - Remove Cluster instance"
-- locator: "xaas-resource-action/0bfa24c1-0948-4be6-8264-1d0f05d4d063.yaml"
-  name: "Rubrik - Live Mount"
-  dependencies:
-  - "xaas-resource-mapping/d123aab1-9094-4cf8-8a3d-f5bd59468c51.yaml"
-- locator: "xaas-resource-action/1b90cde7-80fb-4be6-a328-9f4415ad48f4.yaml"
-  name: "Rubrik - SLA Domain"
-  dependencies:
-  - "xaas-resource-mapping/d123aab1-9094-4cf8-8a3d-f5bd59468c51.yaml"
-exportTime: "2018-03-26T11:44:23.166Z"
+exportTime: "2018-03-26T12:18:16.852Z"

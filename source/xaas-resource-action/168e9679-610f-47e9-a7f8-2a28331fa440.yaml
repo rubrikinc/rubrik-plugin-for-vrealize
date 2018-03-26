@@ -6,7 +6,7 @@ name: "Rubrik - On-Demand Snapshot"
 description: "Initiate an on-demand backup job and wait for a success/failure response"
 catalogRequestInfoHidden: true
 forms:
-- id: "cbec04fb-2c0d-4196-92a6-b12637606521"
+- id: "2ef857dd-399a-4789-9ef1-335a54e3973b"
   form:
     name: "Submitted action details form"
     designerLayout:
@@ -239,7 +239,7 @@ version:
   minor: 0
   micro: 0
 inputParameter:
-  id: "08f089a7-e4cf-4cd5-bfb9-53231f932d66"
+  id: "73f15b16-05fc-48a7-b64b-40c390d3ad6c"
   name: "vm"
   resourceType:
     id:

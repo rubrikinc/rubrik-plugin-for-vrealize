@@ -6,7 +6,7 @@ name: "Rubrik - Live Mount"
 description: "Live Mount a previous version of the VM"
 catalogRequestInfoHidden: true
 forms:
-- id: "2eba7dee-fc1a-4c77-aefb-43f48edad520"
+- id: "e7f15688-b82c-4407-8f5f-c01e6800b56e"
   form:
     name: "Action form"
     designerLayout:
@@ -266,7 +266,7 @@ version:
   minor: 0
   micro: 0
 inputParameter:
-  id: "3d610ef6-3103-430a-927f-da7a67653bbc"
+  id: "04b550f0-235a-4637-a812-d814096bd24f"
   name: "vm"
   resourceType:
     id:

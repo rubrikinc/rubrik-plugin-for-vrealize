@@ -6,7 +6,7 @@ name: "Rubrik - Remove Cluster instance"
 description: "Removes a REST host from the plug-in's inventory."
 catalogRequestInfoHidden: true
 forms:
-- id: "5574fd57-7b7b-4580-bb91-d01957410e89"
+- id: "4c71e860-527d-4367-aa13-2a0c2b6191fc"
   form:
     name: "Request form"
     designerLayout:
