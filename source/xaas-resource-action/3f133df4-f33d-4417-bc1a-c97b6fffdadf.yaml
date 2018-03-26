@@ -227,6 +227,21 @@ forms:
                     value:
                       type: "boolean"
                       value: true
+                - type: "defaultValue"
+                  value:
+                    type: "externalValue"
+                    dynamicValueProviderInfo:
+                      providerEntityId: "com.rubrik.devops.actions/rubrik_GetSlaByVmId_N"
+                      parameterMappings:
+                        params:
+                        - key: "vmid"
+                          value:
+                            type: "path"
+                            path: "slavmid"
+                        - key: "rubrikHost"
+                          value:
+                            type: "path"
+                            path: "yourRestHost"
               initialStaticState:
                 dependencies: []
                 facets: []
