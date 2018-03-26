@@ -1,12 +1,11 @@
 id:
-  id: "0bfa24c1-0948-4be6-8264-1d0f05d4d063"
-access: "external"
-workflowId: "7c8144a5-7da2-4020-b15c-998216943b6a"
-name: "Rubrik - Live Mount"
-description: "Live Mount a previous version of the VM"
+  id: "3f133df4-f33d-4417-bc1a-c97b6fffdadf"
+workflowId: "6ea36d23-6827-4d6a-b06f-c2505d12e653"
+name: "Rubrik - Assign VM to SLA Domain - Dynamic"
+description: "Assign a virtual machine to a Rubrik SLA Domain"
 catalogRequestInfoHidden: true
 forms:
-- id: "8b6cffc3-53ec-42b9-bb2c-4e529e010826"
+- id: "44910903-8563-4023-b447-29ee9e7c35a3"
   form:
     name: "Action form"
     designerLayout:
@@ -78,9 +77,9 @@ forms:
           - items:
             - type: "field"
               size: 2
-              id: "rubrikHost"
-              label: "Rubrik REST Host"
-              description: "Rubrik REST Host"
+              id: "yourRestHost"
+              label: "Rubrik Cluster"
+              description: "Rubrik Cluster"
               dataType:
                 type: "ref"
                 componentTypeId: "com.vmware.csp.core.designer.service"
@@ -100,18 +99,6 @@ forms:
                     value:
                       type: "boolean"
                       value: true
-                - type: "readOnly"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
-                - type: "mandatory"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "editable"
                   value:
                     type: "constant"
@@ -120,7 +107,13 @@ forms:
                       value: true
               initialStaticState:
                 dependencies: []
-                facets: []
+                facets:
+                - type: "visible"
+                  value:
+                    type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: true
               labelDisplaySize: 2
               customField: false
               staticField: false
@@ -131,13 +124,12 @@ forms:
           - items:
             - type: "field"
               size: 2
-              id: "token"
-              label: "Rubrik Session Token"
-              description: "Rubrik Session Token"
+              id: "slavmid"
+              label: "slavmid"
+              description: "slavmid"
               dataType:
                 type: "primitive"
                 typeId: "STRING"
-              displayAdvice: "TEXTBOX"
               state:
                 dependencies: []
                 facets:
@@ -147,18 +139,6 @@ forms:
                     value:
                       type: "boolean"
                       value: false
-                - type: "readOnly"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
-                - type: "mandatory"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "editable"
                   value:
                     type: "constant"
@@ -166,49 +146,14 @@ forms:
                       type: "boolean"
                       value: true
               initialStaticState:
-                dependencies: []
-                facets: []
-              labelDisplaySize: 2
-              customField: false
-              staticField: false
-              refreshOnChange: false
-              isMultiValued: false
-              columns: []
-              errors: []
-          - items:
-            - type: "field"
-              size: 2
-              id: "vmId"
-              label: "Rubrik ID of the VM"
-              description: "Rubrik ID of the VM"
-              dataType:
-                type: "primitive"
-                typeId: "STRING"
-              displayAdvice: "TEXTBOX"
-              state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
+                - type: "visible"
                   value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
-                - type: "readOnly"
-                  value:
-                    type: "constant"
+                    type: "constantClause"
                     value:
                       type: "boolean"
                       value: true
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
-              initialStaticState:
-                dependencies: []
-                facets: []
               labelDisplaySize: 2
               customField: false
               staticField: false
@@ -219,9 +164,9 @@ forms:
           - items:
             - type: "field"
               size: 2
-              id: "snapshotDate"
-              label: "Snaphsot Version"
-              description: "Select the snapshot version that you'd like to livemount"
+              id: "slaDomainName"
+              label: "slaDomainName"
+              description: "slaDomainName"
               dataType:
                 type: "primitive"
                 typeId: "STRING"
@@ -247,7 +192,13 @@ forms:
                       value: true
               initialStaticState:
                 dependencies: []
-                facets: []
+                facets:
+                - type: "visible"
+                  value:
+                    type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: true
               labelDisplaySize: 2
               customField: false
               staticField: false
@@ -266,7 +217,7 @@ version:
   minor: 0
   micro: 0
 inputParameter:
-  id: "129ec076-437d-4aec-899f-be954c59d29c"
+  id: "7fb9c152-9195-4797-807b-2ebc03faca5e"
   name: "vm"
   resourceType:
     id:

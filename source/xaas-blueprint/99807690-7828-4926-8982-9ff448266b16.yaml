@@ -1,11 +1,12 @@
 id:
   id: "99807690-7828-4926-8982-9ff448266b16"
+access: "external"
 workflowId: "0037b167-341e-4858-941b-ffe5d9d32005"
 name: "Rubrik - Add Cluster Instance"
 description: "Adds a Rubrik REST host to the Orchestrator inventory."
 catalogRequestInfoHidden: true
 forms:
-- id: "67b2669f-0b34-4379-b8d4-07edab7f2b78"
+- id: "9e4000fa-35c2-4d9d-bf62-764bd1954c56"
   form:
     name: "Request form"
     designerLayout:
@@ -44,15 +45,15 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "visible"
                   value:
                     type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: false
+                - type: "editable"
+                  value:
+                    type: "constant"
                     value:
                       type: "boolean"
                       value: false
@@ -117,15 +118,15 @@ forms:
               initialStaticState:
                 dependencies: []
                 facets:
-                - type: "mandatory"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "visible"
                   value:
                     type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "mandatory"
+                  value:
+                    type: "constant"
                     value:
                       type: "boolean"
                       value: true
@@ -163,15 +164,15 @@ forms:
               initialStaticState:
                 dependencies: []
                 facets:
-                - type: "mandatory"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "visible"
                   value:
                     type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "mandatory"
+                  value:
+                    type: "constant"
                     value:
                       type: "boolean"
                       value: true
@@ -215,18 +216,18 @@ forms:
                     value:
                       type: "boolean"
                       value: true
-                - type: "defaultValue"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "decimal"
-                      value: 30.0
                 - type: "minValue"
                   value:
                     type: "constant"
                     value:
                       type: "decimal"
                       value: 0.0
+                - type: "defaultValue"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "decimal"
+                      value: 30.0
               labelDisplaySize: 2
               customField: false
               staticField: false
@@ -267,18 +268,18 @@ forms:
                     value:
                       type: "boolean"
                       value: true
-                - type: "defaultValue"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "decimal"
-                      value: 60.0
                 - type: "minValue"
                   value:
                     type: "constant"
                     value:
                       type: "decimal"
                       value: 0.0
+                - type: "defaultValue"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "decimal"
+                      value: 60.0
               labelDisplaySize: 2
               customField: false
               staticField: false
@@ -366,18 +367,18 @@ forms:
               initialStaticState:
                 dependencies: []
                 facets:
-                - type: "mandatory"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "visible"
                   value:
                     type: "constantClause"
                     value:
                       type: "boolean"
                       value: false
+                - type: "mandatory"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
               labelDisplaySize: 2
               customField: false
               staticField: false
@@ -412,18 +413,18 @@ forms:
               initialStaticState:
                 dependencies: []
                 facets:
-                - type: "mandatory"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "visible"
                   value:
                     type: "constantClause"
                     value:
                       type: "boolean"
                       value: false
+                - type: "mandatory"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
               labelDisplaySize: 2
               customField: false
               staticField: false
@@ -491,15 +492,15 @@ forms:
               initialStaticState:
                 dependencies: []
                 facets:
-                - type: "mandatory"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "visible"
                   value:
                     type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "mandatory"
+                  value:
+                    type: "constant"
                     value:
                       type: "boolean"
                       value: true
@@ -537,15 +538,15 @@ forms:
               initialStaticState:
                 dependencies: []
                 facets:
-                - type: "mandatory"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "visible"
                   value:
                     type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "mandatory"
+                  value:
+                    type: "constant"
                     value:
                       type: "boolean"
                       value: true
@@ -676,15 +677,15 @@ forms:
               initialStaticState:
                 dependencies: []
                 facets:
-                - type: "mandatory"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "visible"
                   value:
                     type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "mandatory"
+                  value:
+                    type: "constant"
                     value:
                       type: "boolean"
                       value: true
@@ -781,15 +782,15 @@ forms:
               initialStaticState:
                 dependencies: []
                 facets:
-                - type: "mandatory"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "visible"
                   value:
                     type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "mandatory"
+                  value:
+                    type: "constant"
                     value:
                       type: "boolean"
                       value: true

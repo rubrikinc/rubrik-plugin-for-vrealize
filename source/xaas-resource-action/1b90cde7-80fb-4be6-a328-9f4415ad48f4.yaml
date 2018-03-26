@@ -7,7 +7,7 @@ description: "View the current assignment, and update the assignment of a virtua
   \ machine to a Rubrik SLA Domain"
 catalogRequestInfoHidden: true
 forms:
-- id: "fcfeaba1-8827-4460-8fc6-bef447412978"
+- id: "d735c39a-c7b7-4eb9-ab63-5d1a8e2a6d3d"
   form:
     name: "Action form"
     designerLayout:
@@ -46,15 +46,15 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "visible"
                   value:
                     type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: false
+                - type: "editable"
+                  value:
+                    type: "constant"
                     value:
                       type: "boolean"
                       value: false
@@ -147,12 +147,6 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "visible"
                   value:
                     type: "constant"
@@ -160,6 +154,12 @@ forms:
                       type: "boolean"
                       value: false
                 - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "editable"
                   value:
                     type: "constant"
                     value:
@@ -188,12 +188,6 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "visible"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "refreshOnChange"
                   value:
                     type: "constant"
@@ -201,6 +195,12 @@ forms:
                       type: "boolean"
                       value: false
                 - type: "readOnly"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "visible"
                   value:
                     type: "constant"
                     value:
@@ -235,18 +235,18 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "refreshOnChange"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: false
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
                 - type: "derivedValue"
                   value:
                     type: "externalValue"
@@ -307,18 +307,18 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "refreshOnChange"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: false
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
                 - type: "defaultValue"
                   value:
                     type: "externalValue"
@@ -359,7 +359,7 @@ version:
   minor: 0
   micro: 0
 inputParameter:
-  id: "49a95905-7a28-4569-ba9f-32546496f6c3"
+  id: "c2b62324-7cf7-429a-8119-c1fd2b57aad7"
   name: "vm"
   resourceType:
     id:

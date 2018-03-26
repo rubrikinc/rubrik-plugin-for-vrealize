@@ -1,11 +1,12 @@
 id:
   id: "1cfb201e-fd47-4803-b059-fe374c4ba273"
+access: "external"
 workflowId: "c0f8c32d-8661-400f-945f-8e832ca900c7"
 name: "Rubrik - Remove Cluster instance"
 description: "Removes a REST host from the plug-in's inventory."
 catalogRequestInfoHidden: true
 forms:
-- id: "981134a1-f5b2-4f75-8d8e-d1e06de6a502"
+- id: "b1e82dd0-e62c-4e18-b619-b6995886f285"
   form:
     name: "Request form"
     designerLayout:
@@ -44,15 +45,15 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "visible"
                   value:
                     type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: false
+                - type: "editable"
+                  value:
+                    type: "constant"
                     value:
                       type: "boolean"
                       value: false
@@ -123,15 +124,15 @@ forms:
               initialStaticState:
                 dependencies: []
                 facets:
-                - type: "mandatory"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "visible"
                   value:
                     type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "mandatory"
+                  value:
+                    type: "constant"
                     value:
                       type: "boolean"
                       value: true

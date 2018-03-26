@@ -6,7 +6,7 @@ name: "Rubrik - On-Demand Snapshot"
 description: "Initiate an on-demand backup job and wait for a success/failure response"
 catalogRequestInfoHidden: true
 forms:
-- id: "19261bf2-50b6-4506-8937-d5c2b86ffa98"
+- id: "3fe58fc8-bb42-4be2-9705-fc76d192b8e3"
   form:
     name: "Submitted action details form"
     designerLayout:
@@ -45,15 +45,15 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "visible"
                   value:
                     type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: false
+                - type: "editable"
+                  value:
+                    type: "constant"
                     value:
                       type: "boolean"
                       value: false
@@ -93,12 +93,6 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "visible"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "refreshOnChange"
                   value:
                     type: "constant"
@@ -111,6 +105,12 @@ forms:
                     value:
                       type: "boolean"
                       value: true
+                - type: "visible"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
@@ -140,6 +140,12 @@ forms:
               state:
                 dependencies: []
                 facets:
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
                 - type: "readOnly"
                   value:
                     type: "constantClause"
@@ -152,12 +158,6 @@ forms:
                     value:
                       type: "boolean"
                       value: true
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -181,18 +181,18 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "refreshOnChange"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: false
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
                 - type: "derivedValue"
                   value:
                     type: "externalValue"
@@ -239,7 +239,7 @@ version:
   minor: 0
   micro: 0
 inputParameter:
-  id: "2f27bb78-8451-42cf-a324-6094ce15547b"
+  id: "aa1ea4c7-ef0b-467b-b457-83d893860b4d"
   name: "vm"
   resourceType:
     id:
