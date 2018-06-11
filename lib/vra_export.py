@@ -29,6 +29,7 @@ class VRASession:
             self.headers = {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': self.token}
         else:
             self.auth = requests.auth.HTTPBasicAuth(self.username,self.password)
+            print self.auth
             self.headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
 
     def checkcall(self,r):
