@@ -28,8 +28,6 @@ class VRASession:
             self.token =  self.authenticate(self.host, self.username, self.password, self.tenant)
             self.headers = {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': self.token}
         else:
-            self.auth = requests.auth.HTTPBasicAuth(self.username,self.password)
-            print self.auth
             self.headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
 
     def checkcall(self,r):
@@ -52,9 +50,11 @@ class VRASession:
 
     def get_call(self, call):
         uri = self.baseurl + call
-        print self.auth
         try:
-            r = requests.get(uri, verify=False, headers=self.headers,auth=self.auth)
+            if tenant:
+                r = requests.get(uri, verify=False, headers=self.headers,auth=self.auth)
+            else:
+                r = requests.get(uri, verify=False, headers=self.headers,auth=HTTPBasicAuth(self.username,self.password))
             r.raise_for_status()
         except (requests.exceptions.HTTPError, requests.exceptions.RequestException) as e:
             print e
