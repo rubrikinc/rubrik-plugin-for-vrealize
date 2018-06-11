@@ -128,7 +128,10 @@ if __name__ == '__main__':
         session.create_package()
         session.download_package()
     except:
+        print "Before Session\n"
         session = VRASession(sys.argv[1:])
+        print "After Session\n"
         session.download_vro()
+        print "After vro\n"
         
       
