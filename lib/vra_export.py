@@ -51,7 +51,7 @@ class VRASession:
     def get_call(self, call):
         uri = self.baseurl + call
         try:
-            if tenant:
+            if self.tenant:
                 r = requests.get(uri, verify=False, headers=self.headers,auth=self.auth)
             else:
                 r = requests.get(uri, verify=False, headers=self.headers,auth=HTTPBasicAuth(self.username,self.password))
