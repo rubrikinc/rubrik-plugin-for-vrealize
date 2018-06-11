@@ -120,7 +120,7 @@ class VRASession:
 
     def download_vro(self):
         l = session.get_call("/vco/api/packages/com.rubrik.devops?exportConfigurationAttributeValues=false&exportGlobalTags=false&exportVersionHistory=true&exportAsZip=true&exportConfigSecureStringAttributeValues=false")
-        pp.pprint(l)
+        pp.pprint(l['id'])
         #d = session.get_call('/' + l['id'])
 
 if __name__ == '__main__':
