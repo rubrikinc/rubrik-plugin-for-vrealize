@@ -122,6 +122,7 @@ class VRASession:
 
 
 if __name__ == '__main__':
+    print sys.argv
     session = VRASession(sys.argv[1:])
     try:
         session.delete_package()
