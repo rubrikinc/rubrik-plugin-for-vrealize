@@ -92,7 +92,7 @@ class VRASession:
             sys.exit(1)
 
     def create_package(self):
-        list = session.get_call("/content-management-service/api/contents?limit=200")
+#        list = session.get_call("/content-management-service/api/contents?limit=200")
         obj = {}
         obj["contents"] = []
         for output in list['content']:
