@@ -124,6 +124,7 @@ if __name__ == '__main__':
         session.create_package()
         session.download_package()
     except:
-        download_vro()
+        session = VRASession(sys.argv[1:])
+        session.download_vro()
         
       
