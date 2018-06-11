@@ -37,4 +37,4 @@ data:
   name: "Rubrik - On-Demand Snapshot"
   dependencies:
   - "xaas-resource-mapping/d123aab1-9094-4cf8-8a3d-f5bd59468c51.yaml"
-exportTime: "2018-06-11T15:08:49.232Z"
+exportTime: "2018-06-11T15:13:58.128Z"
