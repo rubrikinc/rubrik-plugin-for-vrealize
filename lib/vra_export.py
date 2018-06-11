@@ -25,10 +25,10 @@ class VRASession:
         self.password = args.password
         self.packageName = args.package
         self.baseurl = "https://" + self.host
-        try:
+        if isset(self.tenant):
             self.token =  self.authenticate(self.host, self.username, self.password, self.tenant)
             self.headers = {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': self.token}
-        except:
+        else:
             self.headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
 
     def checkcall(self,r):
@@ -52,7 +52,7 @@ class VRASession:
     def get_call(self, call):
         uri = self.baseurl + call
         try:
-            if self.tenant:
+            if isset(self.tenant):
                 r = requests.get(uri, verify=False, headers=self.headers,auth=self.auth)
             else:
                 r = requests.get(uri, verify=False, headers=self.headers,auth=(self.username,self.password))
@@ -122,16 +122,12 @@ class VRASession:
 
 
 if __name__ == '__main__':
-    try:    
-        session = VRASession(sys.argv[1:])
+    session = VRASession(sys.argv[1:])
+    if isset(self.tenant):
         session.delete_package()
         session.create_package()
         session.download_package()
-    except:
-        print "Before Session\n"
-        session = VRASession(sys.argv[1:])
-        print "After Session\n"
+    else:
         session.download_vro()
-        print "After vro\n"
         
       
