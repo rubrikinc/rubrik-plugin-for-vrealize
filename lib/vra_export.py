@@ -25,10 +25,10 @@ class VRASession:
         self.password = args.password
         self.packageName = args.package
         self.baseurl = "https://" + self.host
-        if self.tenant:
+        try:
             self.token =  self.authenticate(self.host, self.username, self.password, self.tenant)
             self.headers = {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': self.token}
-        else:
+        except:
             self.headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
 
     def checkcall(self,r):
