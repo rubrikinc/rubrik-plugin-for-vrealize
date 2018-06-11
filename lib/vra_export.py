@@ -111,10 +111,10 @@ class VRASession:
             session.get_call_download("/content-management-service/api/packages/" + output['id'], output['name']+".zip")
             print(output['name']+".zip")
 
-    def download_vro(self):
-        self.headers = requests.auth.HTTPBasicAuth(self.username,self.password)
-        self.headers = {'Content-Type':'application/json','Accept':'application/json'} 
-        l = session.get_call("/vco/api/packages/com.rubrik.devops?exportConfigurationAttributeValues=false&exportGlobalTags=false&exportVersionHistory=true&exportAsZip=true&exportConfigSecureStringAttributeValues=false")
+def download_vro(self):
+    self.headers = requests.auth.HTTPBasicAuth(self.username,self.password)
+    self.headers = {'Content-Type':'application/json','Accept':'application/json'} 
+    l = session.get_call("/vco/api/packages/com.rubrik.devops?exportConfigurationAttributeValues=false&exportGlobalTags=false&exportVersionHistory=true&exportAsZip=true&exportConfigSecureStringAttributeValues=false")
 
 
 if __name__ == '__main__':
