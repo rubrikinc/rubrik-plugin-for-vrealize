@@ -118,12 +118,12 @@ class VRASession:
 
 
 if __name__ == '__main__':
-    if tenant:
+    try:    
         session = VRASession(sys.argv[1:])
         session.delete_package()
         session.create_package()
         session.download_package()
-    else:
+    except:
         session.download_vro()
         
       
