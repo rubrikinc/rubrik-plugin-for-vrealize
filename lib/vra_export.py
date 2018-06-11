@@ -127,7 +127,7 @@ if __name__ == '__main__':
         session.delete_package()
         session.create_package()
         session.download_package()
-    except:
+    else:
         session.download_vro()
         
       
