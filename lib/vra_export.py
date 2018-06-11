@@ -54,7 +54,7 @@ class VRASession:
         uri = self.baseurl + call
         try:
             if self.tenant:
-                r = requests.get(uri, verify=False, headers=self.headers,auth=self.auth)
+                r = requests.get(uri, verify=False, headers=self.headers)
             else:
                 r = requests.get(uri, verify=False, headers=self.headers,auth=(self.username,self.password))
             r.raise_for_status()
