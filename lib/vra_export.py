@@ -123,11 +123,11 @@ class VRASession:
 
 if __name__ == '__main__':
     session = VRASession(sys.argv[1:])
-    if tenant in locals() or tenant in globals():
+    try:
         session.delete_package()
         session.create_package()
         session.download_package()
-    else:
+    except:
         session.download_vro()
         
       
