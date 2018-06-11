@@ -76,7 +76,7 @@ class VRASession:
             print "Downloading vRO Package"
             headers = {'Accept': 'application/octet-stream'}
             r = requests.get(uri, stream=True, verify=False, headers=headers,auth=(self.username,self.password))
-            pp.pprint(r.headers)
+            pp.pprint(r.headers['Content-Disposition'])
         fn = re.findall('filename="(.+)"', r.headers['Content-Disposition'])
         with open(fn, 'wb') as f:
             f.write(r.content)
