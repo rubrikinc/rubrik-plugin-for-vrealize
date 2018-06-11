@@ -110,10 +110,18 @@ class VRASession:
             session.get_call_download("/content-management-service/api/packages/" + output['id'], output['name']+".zip")
             print(output['name']+".zip")
 
+    def download_vro(self):
+        l = session.get_call("/vco/api/packages/com.rubrik.devops?exportConfigurationAttributeValues=false&exportGlobalTags=false&exportVersionHistory=true&exportAsZip=true&exportConfigSecureStringAttributeValues=false")
+
 
 if __name__ == '__main__':
-    session = VRASession(sys.argv[1:])
-    session.delete_package()
-    session.create_package()
-    session.download_package()
+    if tenant:
+        session = VRASession(sys.argv[1:])
+        session.delete_package()
+        session.create_package()
+        session.download_package()
+    if !tenant:
+        session = VRASession(sys.argv[1:])
+        session.download_vro()
+        
       
