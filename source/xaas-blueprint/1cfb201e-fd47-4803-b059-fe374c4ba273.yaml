@@ -45,21 +45,21 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "visible"
+                - type: "derivedValue"
                   value:
-                    type: "constantClause"
-                    value:
-                      type: "boolean"
-                      value: false
+                    type: "callback"
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: false
-                - type: "derivedValue"
+                - type: "visible"
                   value:
-                    type: "callback"
+                    type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -124,15 +124,15 @@ forms:
               initialStaticState:
                 dependencies: []
                 facets:
-                - type: "visible"
-                  value:
-                    type: "constantClause"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "mandatory"
                   value:
                     type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "visible"
+                  value:
+                    type: "constantClause"
                     value:
                       type: "boolean"
                       value: true

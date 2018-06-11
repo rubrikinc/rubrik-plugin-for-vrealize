@@ -46,21 +46,21 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "visible"
+                - type: "derivedValue"
                   value:
-                    type: "constantClause"
-                    value:
-                      type: "boolean"
-                      value: false
+                    type: "callback"
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: false
-                - type: "derivedValue"
+                - type: "visible"
                   value:
-                    type: "callback"
+                    type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -88,18 +88,6 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "readOnly"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "derivedValue"
                   value:
                     type: "externalValue"
@@ -119,6 +107,18 @@ forms:
                           value:
                             type: "path"
                             path: "token"
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "readOnly"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -133,8 +133,7 @@ forms:
             - type: "field"
               size: 2
               id: "rubrikHost"
-              label: "REST call to GET /vm"
-              description: "REST call to GET /vm"
+              label: "Rubrik Host"
               dataType:
                 type: "ref"
                 classId: "REST:RESTHost"
@@ -147,12 +146,6 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "visible"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "refreshOnChange"
                   value:
                     type: "constant"
@@ -165,6 +158,12 @@ forms:
                     value:
                       type: "boolean"
                       value: true
+                - type: "visible"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -179,8 +178,7 @@ forms:
             - type: "field"
               size: 2
               id: "token"
-              label: "Rubrik authentication token"
-              description: "Rubrik authentication token"
+              label: "Rubrik Token"
               dataType:
                 type: "primitive"
                 typeId: "STRING"
@@ -194,6 +192,12 @@ forms:
                     value:
                       type: "boolean"
                       value: false
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
                 - type: "readOnly"
                   value:
                     type: "constant"
@@ -201,12 +205,6 @@ forms:
                       type: "boolean"
                       value: true
                 - type: "visible"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
-                - type: "editable"
                   value:
                     type: "constant"
                     value:
@@ -226,7 +224,7 @@ forms:
             - type: "field"
               size: 2
               id: "vmId"
-              label: "Rubrik ID of the VM"
+              label: "VM ID"
               description: "Rubrik ID of the VM"
               dataType:
                 type: "primitive"
@@ -241,12 +239,6 @@ forms:
                     value:
                       type: "boolean"
                       value: false
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "derivedValue"
                   value:
                     type: "externalValue"
@@ -266,6 +258,12 @@ forms:
                           value:
                             type: "path"
                             path: "token"
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
               initialStaticState:
                 dependencies: []
                 facets: []

@@ -45,21 +45,21 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "visible"
+                - type: "derivedValue"
                   value:
-                    type: "constantClause"
-                    value:
-                      type: "boolean"
-                      value: false
+                    type: "callback"
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: false
-                - type: "derivedValue"
+                - type: "visible"
                   value:
-                    type: "callback"
+                    type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -100,12 +100,6 @@ forms:
                     value:
                       type: "boolean"
                       value: true
-                - type: "readOnly"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "mandatory"
                   value:
                     type: "constant"
@@ -113,6 +107,12 @@ forms:
                       type: "boolean"
                       value: true
                 - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "readOnly"
                   value:
                     type: "constant"
                     value:
@@ -147,12 +147,6 @@ forms:
                     value:
                       type: "boolean"
                       value: false
-                - type: "readOnly"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "mandatory"
                   value:
                     type: "constant"
@@ -160,6 +154,12 @@ forms:
                       type: "boolean"
                       value: true
                 - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "readOnly"
                   value:
                     type: "constant"
                     value:
