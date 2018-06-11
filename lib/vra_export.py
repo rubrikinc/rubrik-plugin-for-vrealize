@@ -69,12 +69,13 @@ class VRASession:
     def get_call_download(self, call):
         uri = self.baseurl + call
         if self.tenant:
+            print "Downloading vRA Package"
             headers = {'Accept': 'application/zip', 'Authorization': self.token}
             r = requests.get(uri, stream=True, headers=headers, verify=False)
         else:
+            print "Downloading vRO Package"
             headers = {'Accept': 'application/octet-stream'}
             r = requests.get(uri, stream=True, verify=False, headers=headers,auth=(self.username,self.password))
-            pp.pprint(r)
         fn = re.findall('filename="(.+)"', r.headers['content-disposition'])
         print "Filename = " + fn[0]
         with open(fn, 'wb') as f:
@@ -126,7 +127,6 @@ class VRASession:
             session.get_call_download("/content-management-service/api/packages/" + output['id'])
 
     def download_vro(self):
-        #output = session.get_call("/vco/api/packages/com.rubrik.devops?exportConfigurationAttributeValues=false&exportGlobalTags=false&exportVersionHistory=true&exportAsZip=true&exportConfigSecureStringAttributeValues=false")
         session.get_call_download("/vco/api/packages/com.rubrik.devops?exportConfigurationAttributeValues=false&exportGlobalTags=false&exportVersionHistory=true&exportConfigSecureStringAttributeValues=false")
 
 if __name__ == '__main__':
