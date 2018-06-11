@@ -70,14 +70,14 @@ class VRASession:
         if self.tenant:
             headers = {'Accept': 'application/zip', 'Authorization': self.token}
             r = requests.get(uri, stream=True, headers=headers, verify=False)
-            fn = r.headers.get('content-disposition')['filename']
-            pp.pprint(fn)
+            fn = r.headers.get('content-disposition')
+            pp.pprint fn
         else:
             headers = {'Accept': 'application/zip'}
             r = requests.get(uri, stream=True, verify=False, headers=headers,auth=(self.username,self.password))
             fn = r.headers.get('content-disposition')['filename']
-        with open(fn, 'wb') as f:
-            f.write(r.content)
+#        with open(fn, 'wb') as f:
+#            f.write(r.content)
 
     def post_call(self, call, payload):
         uri  = self.baseurl + call
