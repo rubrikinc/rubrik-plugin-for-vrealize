@@ -125,7 +125,7 @@ class VRASession:
 
     def download_vro(self):
         #output = session.get_call("/vco/api/packages/com.rubrik.devops?exportConfigurationAttributeValues=false&exportGlobalTags=false&exportVersionHistory=true&exportAsZip=true&exportConfigSecureStringAttributeValues=false")
-        session.get_call_download("/vco/api/packages/com.rubrik.devops?exportConfigurationAttributeValues=false&exportAsZip=true&exportGlobalTags=false&exportVersionHistory=true&exportConfigSecureStringAttributeValues=false")
+        session.get_call_download("/vco/api/packages/com.rubrik.devops?exportConfigurationAttributeValues=false&exportAsZip=true&exportGlobalTags=false&exportVersionHistory=true&exportConfigSecureStringAttributeValues=false",'')
 
 if __name__ == '__main__':
     session = VRASession(sys.argv[1:])
