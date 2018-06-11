@@ -45,21 +45,21 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "visible"
+                - type: "derivedValue"
                   value:
-                    type: "constantClause"
-                    value:
-                      type: "boolean"
-                      value: false
+                    type: "callback"
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: false
-                - type: "derivedValue"
+                - type: "visible"
                   value:
-                    type: "callback"
+                    type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -99,9 +99,9 @@ forms:
                     value:
                       type: "boolean"
                       value: true
-                - type: "readOnly"
+                - type: "editable"
                   value:
-                    type: "constantClause"
+                    type: "constant"
                     value:
                       type: "boolean"
                       value: true
@@ -111,9 +111,9 @@ forms:
                     value:
                       type: "boolean"
                       value: false
-                - type: "editable"
+                - type: "readOnly"
                   value:
-                    type: "constant"
+                    type: "constantClause"
                     value:
                       type: "boolean"
                       value: true
@@ -146,15 +146,15 @@ forms:
                     value:
                       type: "boolean"
                       value: false
-                - type: "readOnly"
-                  value:
-                    type: "constantClause"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "editable"
                   value:
                     type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "readOnly"
+                  value:
+                    type: "constantClause"
                     value:
                       type: "boolean"
                       value: true
@@ -187,12 +187,6 @@ forms:
                     value:
                       type: "boolean"
                       value: false
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "derivedValue"
                   value:
                     type: "externalValue"
@@ -212,6 +206,12 @@ forms:
                           value:
                             type: "path"
                             path: "token"
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
               initialStaticState:
                 dependencies: []
                 facets: []
