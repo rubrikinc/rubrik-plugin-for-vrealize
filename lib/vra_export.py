@@ -77,7 +77,7 @@ class VRASession:
             headers = {'Accept': 'application/octet-stream'}
             r = requests.get(uri, stream=True, verify=False, headers=headers,auth=(self.username,self.password))
         fn = re.findall('filename="(.+)"', r.headers['content-disposition'])
-        print "Filename = " + fn[0]
+        print "Filename = " + fn
         with open(fn, 'wb') as f:
             f.write(r.content)
 
