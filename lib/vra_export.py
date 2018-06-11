@@ -72,7 +72,7 @@ class VRASession:
             headers = {'Accept': 'application/zip', 'Authorization': self.token}
             r = requests.get(uri, stream=True, headers=headers, verify=False)
         else:
-            headers = {'Accept': 'application/zip'}
+            headers = {'Accept': 'application/*'}
             r = requests.get(uri, stream=True, verify=False, headers=headers,auth=(self.username,self.password))
         fn = re.findall('filename="(.+)"', r.headers.get('content-disposition'))[0]
         print "Filename = " + fn
