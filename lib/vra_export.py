@@ -53,7 +53,7 @@ class VRASession:
     def get_call(self, call):
         uri = self.baseurl + call
         try:
-            if self.tenant in locals() or self.tenant in globals():
+            if self.tenant:
                 r = requests.get(uri, verify=False, headers=self.headers,auth=self.auth)
             else:
                 r = requests.get(uri, verify=False, headers=self.headers,auth=(self.username,self.password))
