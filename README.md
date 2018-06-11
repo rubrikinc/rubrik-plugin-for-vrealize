@@ -1,6 +1,6 @@
 # vRealize Automation Integration Requirements
 ## Non Production Environment
-* Rubrik 4.x (preferred)
+* Rubrik 4.1 (preferred)
 * vRA 7.3 or above
 * Microsoft SQL Server 2008+
 * Functional IAAS Infrastructure
