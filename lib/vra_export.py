@@ -24,9 +24,12 @@ class VRASession:
         self.password = args.password
         self.packageName = args.package
         self.baseurl = "https://" + self.host
-
-        self.token =  self.authenticate(self.host, self.username, self.password, self.tenant)
-        self.headers = {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': self.token}
+        if tenant:
+            self.token =  self.authenticate(self.host, self.username, self.password, self.tenant)
+            self.headers = {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': self.token}
+        else:
+            self.auth = requests.auth.HTTPBasicAuth(self.username,self.password)
+            self.headers = {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': self.token}
 
     def checkcall(self,r):
         acceptedResponses = [200, 201, 203, 204]
@@ -49,7 +52,7 @@ class VRASession:
     def get_call(self, call):
         uri = self.baseurl + call
         try:
-            r = requests.get(uri, verify=False, headers=self.headers)
+            r = requests.get(uri, verify=False, headers=self.headers,auth=self.auth)
             r.raise_for_status()
         except (requests.exceptions.HTTPError, requests.exceptions.RequestException) as e:
             print e
@@ -112,8 +115,6 @@ class VRASession:
             print(output['name']+".zip")
 
 def download_vro(self):
-    self.headers = requests.auth.HTTPBasicAuth(self.username,self.password)
-    self.headers = {'Content-Type':'application/json','Accept':'application/json'} 
     l = session.get_call("/vco/api/packages/com.rubrik.devops?exportConfigurationAttributeValues=false&exportGlobalTags=false&exportVersionHistory=true&exportAsZip=true&exportConfigSecureStringAttributeValues=false")
 
 
