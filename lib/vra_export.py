@@ -25,7 +25,7 @@ class VRASession:
         self.password = args.password
         self.packageName = args.package
         self.baseurl = "https://" + self.host
-        if isset(self.tenant):
+        if self.tenant in locals() or self.tenant in globals():
             self.token =  self.authenticate(self.host, self.username, self.password, self.tenant)
             self.headers = {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': self.token}
         else:
@@ -52,7 +52,7 @@ class VRASession:
     def get_call(self, call):
         uri = self.baseurl + call
         try:
-            if isset(self.tenant):
+            if self.tenant in locals() or self.tenant in globals():
                 r = requests.get(uri, verify=False, headers=self.headers,auth=self.auth)
             else:
                 r = requests.get(uri, verify=False, headers=self.headers,auth=(self.username,self.password))
@@ -123,7 +123,7 @@ class VRASession:
 
 if __name__ == '__main__':
     session = VRASession(sys.argv[1:])
-    if isset(self.tenant):
+    if self.tenant in locals() or x in globals():
         session.delete_package()
         session.create_package()
         session.download_package()
