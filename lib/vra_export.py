@@ -1,5 +1,6 @@
 #!/bin/python
 import requests, json, sys, pprint, time,argparse
+from requests.auth import HTTPBasicAuth
 from getpass import getpass
 import pprint
 pp = pprint.PrettyPrinter(indent=4)
@@ -54,7 +55,7 @@ class VRASession:
             if self.tenant:
                 r = requests.get(uri, verify=False, headers=self.headers,auth=self.auth)
             else:
-                r = requests.get(uri, verify=False, headers=self.headers,auth=requests.auth.HTTPBasicAuth(self.username,self.password))
+                r = requests.get(uri, verify=False, headers=self.headers,auth=HTTPBasicAuth(self.username,self.password))
             r.raise_for_status()
         except (requests.exceptions.HTTPError, requests.exceptions.RequestException) as e:
             print e
