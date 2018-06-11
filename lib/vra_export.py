@@ -27,6 +27,7 @@ class VRASession:
         self.baseurl = "https://" + self.host
         if self.tenant:
             self.token =  self.authenticate(self.host, self.username, self.password, self.tenant)
+            print self.token
             self.headers = {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': self.token}
         else:
             self.headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
