@@ -54,7 +54,7 @@ class VRASession:
             if self.tenant:
                 r = requests.get(uri, verify=False, headers=self.headers,auth=self.auth)
             else:
-                r = requests.get(uri, verify=False, headers=self.headers,auth=requests.HTTPBasicAuth(self.username,self.password))
+                r = requests.get(uri, verify=False, headers=self.headers,auth=requests.auth.HTTPBasicAuth(self.username,self.password))
             r.raise_for_status()
         except (requests.exceptions.HTTPError, requests.exceptions.RequestException) as e:
             print e
