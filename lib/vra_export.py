@@ -36,13 +36,14 @@ class VRASession:
             sys.exit(r.status_code)
 
     def authenticate(self, host, user, password, tenant):
-        headers = { 'Content-Type': 'application/json', 'Accept': 'application/json' }
-        payload = {"username": user, "password": password, "tenant": tenant}
-        url = 'https://' + host + '/identity/api/tokens'
-        r = requests.post(url=url, data=json.dumps(payload), headers=headers, verify=False)
-        self.checkcall(r)
-        response = r.json()
-        token = 'Bearer ' + response['id']
+        if tenant:
+            headers = { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+            payload = {"username": user, "password": password, "tenant": tenant}
+            url = 'https://' + host + '/identity/api/tokens'
+            r = requests.post(url=url, data=json.dumps(payload), headers=headers, verify=False)
+            self.checkcall(r)
+            response = r.json()
+            token = 'Bearer ' + response['id']
         return token
 
     def get_call(self, call):
@@ -111,6 +112,8 @@ class VRASession:
             print(output['name']+".zip")
 
     def download_vro(self):
+        self.headers = requests.auth.HTTPBasicAuth(self.username,self.password)
+        self.headers = {'Content-Type':'application/json','Accept':'application/json'} 
         l = session.get_call("/vco/api/packages/com.rubrik.devops?exportConfigurationAttributeValues=false&exportGlobalTags=false&exportVersionHistory=true&exportAsZip=true&exportConfigSecureStringAttributeValues=false")
 
 
@@ -121,7 +124,6 @@ if __name__ == '__main__':
         session.create_package()
         session.download_package()
     if !tenant:
-        session = VRASession(sys.argv[1:])
         session.download_vro()
         
       
