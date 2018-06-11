@@ -123,7 +123,7 @@ if __name__ == '__main__':
         session.delete_package()
         session.create_package()
         session.download_package()
-    if !tenant:
+    if tenant is None:
         session.download_vro()
         
       
