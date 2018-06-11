@@ -73,6 +73,7 @@ class VRASession:
         else:
             headers = {'Accept': 'application/zip'}
             r = requests.get(uri, stream=True, verify=False, headers=headers,auth=(self.username,self.password))
+            pp.pprint(r.headers.get('content-disposition'))
         with open(fn, 'wb') as f:
             f.write(r.content)
 
@@ -124,7 +125,7 @@ class VRASession:
 
     def download_vro(self):
         #output = session.get_call("/vco/api/packages/com.rubrik.devops?exportConfigurationAttributeValues=false&exportGlobalTags=false&exportVersionHistory=true&exportAsZip=true&exportConfigSecureStringAttributeValues=false")
-        session.get_call_download("/vco/api/packages/com.rubrik.devops?exportConfigurationAttributeValues=false&exportAsZip=true&exportGlobalTags=false&exportVersionHistory=true&exportConfigSecureStringAttributeValues=false", "tmp.package")
+        session.get_call_download("/vco/api/packages/com.rubrik.devops?exportConfigurationAttributeValues=false&exportAsZip=true&exportGlobalTags=false&exportVersionHistory=true&exportConfigSecureStringAttributeValues=false")
 
 if __name__ == '__main__':
     session = VRASession(sys.argv[1:])
