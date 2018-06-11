@@ -52,6 +52,7 @@ class VRASession:
 
     def get_call(self, call):
         uri = self.baseurl + call
+        print self.auth
         try:
             r = requests.get(uri, verify=False, headers=self.headers,auth=self.auth)
             r.raise_for_status()
