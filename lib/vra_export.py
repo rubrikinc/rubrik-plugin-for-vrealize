@@ -121,8 +121,7 @@ class VRASession:
         l = session.get_call("/content-management-service/api/packages")
         for output in l['content']:
           if output["name"] == self.packageName:
-            session.get_call_download("/content-management-service/api/packages/" + output['id'], output['name']+".zip")
-            print(output['name']+".zip")
+            session.get_call_download("/content-management-service/api/packages/" + output['id'])
 
     def download_vro(self):
         #output = session.get_call("/vco/api/packages/com.rubrik.devops?exportConfigurationAttributeValues=false&exportGlobalTags=false&exportVersionHistory=true&exportAsZip=true&exportConfigSecureStringAttributeValues=false")
