@@ -71,6 +71,7 @@ class VRASession:
             headers = {'Accept': 'application/zip', 'Authorization': self.token}
             r = requests.get(uri, stream=True, headers=headers, verify=False)
         else:
+            headers = {'Accept': 'application/zip'}
             r = requests.get(uri, stream=True, verify=False, headers=self.headers,auth=(self.username,self.password))
         with open(fn, 'wb') as f:
             f.write(r.content)
