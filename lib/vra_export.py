@@ -65,15 +65,16 @@ class VRASession:
         response = r.json()
         return response
 
-    def get_call_download(self, call, fn):
+    def get_call_download(self, call):
         uri = self.baseurl + call
         if self.tenant:
             headers = {'Accept': 'application/zip', 'Authorization': self.token}
             r = requests.get(uri, stream=True, headers=headers, verify=False)
+            fn = r.headers.get('content-disposition')['filename']
         else:
             headers = {'Accept': 'application/zip'}
             r = requests.get(uri, stream=True, verify=False, headers=headers,auth=(self.username,self.password))
-            print r.headers.get('content-disposition')['filename']
+            fn = r.headers.get('content-disposition')['filename']
         with open(fn, 'wb') as f:
             f.write(r.content)
 
