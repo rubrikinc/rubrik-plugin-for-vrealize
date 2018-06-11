@@ -74,7 +74,7 @@ class VRASession:
         else:
             headers = {'Accept': 'application/zip'}
             r = requests.get(uri, stream=True, verify=False, headers=headers,auth=(self.username,self.password))
-        fn = re.findall('filename=(.+)', r.headers.get('content-disposition'))[0]
+        fn = re.findall('filename="(.+)"', r.headers.get('content-disposition'))[0]
         print "Filename = " + fn
         with open(fn, 'wb') as f:
             f.write(r.content)
