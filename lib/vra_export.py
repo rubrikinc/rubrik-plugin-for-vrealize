@@ -72,7 +72,7 @@ class VRASession:
             r = requests.get(uri, stream=True, headers=headers, verify=False)
         else:
             headers = {'Accept': 'application/zip'}
-            r = requests.get(uri, stream=True, verify=False, headers=self.headers,auth=(self.username,self.password))
+            r = requests.get(uri, stream=True, verify=False, headers=headers,auth=(self.username,self.password))
         with open(fn, 'wb') as f:
             f.write(r.content)
 
