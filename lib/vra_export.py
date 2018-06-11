@@ -102,10 +102,10 @@ class VRASession:
             obj["name"]=self.packageName
             obj["description"]=self.packageName
             obj["contents"].append(output['id'])
-       # session.post_call("/content-management-service/api/packages",obj)
+        session.post_call("/content-management-service/api/packages",obj)
 
     def delete_package(self):
-        l = session.get_call("/content-management-service/api/packages")
+       # l = session.get_call("/content-management-service/api/packages")
         for output in l['content']:
           if output["name"] == self.packageName:
             session.delete_call("/content-management-service/api/packages/" + output['id'])
