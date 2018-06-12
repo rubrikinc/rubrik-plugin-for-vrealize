@@ -79,66 +79,13 @@ forms:
           - items:
             - type: "field"
               size: 2
-              id: "currentSLA"
-              label: "Current SLA Domain"
-              dataType:
-                type: "primitive"
-                typeId: "STRING"
-              displayAdvice: "TEXTBOX"
-              state:
-                dependencies: []
-                facets:
-                - type: "derivedValue"
-                  value:
-                    type: "externalValue"
-                    dynamicValueProviderInfo:
-                      providerEntityId: "com.rubrik.devops.actions/rubrik_GetSlaByVm"
-                      parameterMappings:
-                        params:
-                        - key: "vm"
-                          value:
-                            type: "path"
-                            path: "vm"
-                        - key: "rubrikHost"
-                          value:
-                            type: "path"
-                            path: "rubrikHost"
-                        - key: "token"
-                          value:
-                            type: "path"
-                            path: "token"
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
-                - type: "readOnly"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
-              initialStaticState:
-                dependencies: []
-                facets: []
-              labelDisplaySize: 2
-              customField: true
-              staticField: false
-              refreshOnChange: false
-              isMultiValued: false
-              columns: []
-              errors: []
-          - items:
-            - type: "field"
-              size: 2
               id: "rubrikHost"
               label: "Rubrik Host"
               dataType:
                 type: "ref"
                 classId: "REST:RESTHost"
                 label: "REST:RESTHost"
-              displayAdvice: "TREE"
+              displayAdvice: "DROPDOWN"
               permissibleValues:
                 type: "dynamic"
                 customAllowed: false
@@ -158,12 +105,6 @@ forms:
                     value:
                       type: "boolean"
                       value: true
-                - type: "visible"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -177,8 +118,8 @@ forms:
           - items:
             - type: "field"
               size: 2
-              id: "token"
-              label: "Rubrik Token"
+              id: "currentSLA"
+              label: "Current SLA Domain"
               dataType:
                 type: "primitive"
                 typeId: "STRING"
@@ -186,25 +127,13 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "readOnly"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
-                - type: "visible"
+                - type: "editable"
                   value:
                     type: "constant"
                     value:
@@ -214,7 +143,7 @@ forms:
                 dependencies: []
                 facets: []
               labelDisplaySize: 2
-              customField: false
+              customField: true
               staticField: false
               refreshOnChange: false
               isMultiValued: false
@@ -239,25 +168,6 @@ forms:
                     value:
                       type: "boolean"
                       value: false
-                - type: "derivedValue"
-                  value:
-                    type: "externalValue"
-                    dynamicValueProviderInfo:
-                      providerEntityId: "com.rubrik.devops.actions/rubrik_GetVmId"
-                      parameterMappings:
-                        params:
-                        - key: "vm"
-                          value:
-                            type: "path"
-                            path: "vm"
-                        - key: "rubrikHost"
-                          value:
-                            type: "path"
-                            path: "rubrikHost"
-                        - key: "token"
-                          value:
-                            type: "path"
-                            path: "token"
                 - type: "editable"
                   value:
                     type: "constant"
@@ -288,20 +198,15 @@ forms:
                 type: "dynamic"
                 customAllowed: false
                 dependencies:
-                - "rubrikHost"
-                - "token"
+                - "rubrikHost~name"
               permissibleValuesContext:
-                providerEntityId: "com.rubrik.devops.actions/rubrik_GetSlaList"
+                providerEntityId: "com.rubrik.devops.actions/rubrik_GetSlaList_N"
                 parameterMappings:
                   params:
-                  - key: "rubrikHost"
+                  - key: "rubrikCluster"
                     value:
                       type: "path"
-                      path: "rubrikHost"
-                  - key: "token"
-                    value:
-                      type: "path"
-                      path: "token"
+                      path: "rubrikHost~name"
               state:
                 dependencies: []
                 facets:
@@ -317,25 +222,6 @@ forms:
                     value:
                       type: "boolean"
                       value: true
-                - type: "defaultValue"
-                  value:
-                    type: "externalValue"
-                    dynamicValueProviderInfo:
-                      providerEntityId: "com.rubrik.devops.actions/rubrik_GetSlaByVm"
-                      parameterMappings:
-                        params:
-                        - key: "vm"
-                          value:
-                            type: "path"
-                            path: "vm"
-                        - key: "rubrikHost"
-                          value:
-                            type: "path"
-                            path: "rubrikHost"
-                        - key: "token"
-                          value:
-                            type: "path"
-                            path: "token"
               initialStaticState:
                 dependencies: []
                 facets: []
