@@ -93,13 +93,19 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
+                - type: "readOnly"
+                  value:
+                    type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
-                - type: "editable"
+                - type: "refreshOnChange"
                   value:
                     type: "constant"
                     value:
@@ -111,12 +117,6 @@ forms:
                     value:
                       type: "boolean"
                       value: false
-                - type: "readOnly"
-                  value:
-                    type: "constantClause"
-                    value:
-                      type: "boolean"
-                      value: true
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -146,15 +146,15 @@ forms:
                     value:
                       type: "boolean"
                       value: false
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "readOnly"
                   value:
                     type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "editable"
+                  value:
+                    type: "constant"
                     value:
                       type: "boolean"
                       value: true
@@ -181,12 +181,6 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "derivedValue"
                   value:
                     type: "externalValue"
@@ -212,6 +206,12 @@ forms:
                     value:
                       type: "boolean"
                       value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []

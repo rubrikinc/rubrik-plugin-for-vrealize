@@ -124,15 +124,15 @@ forms:
               initialStaticState:
                 dependencies: []
                 facets:
-                - type: "mandatory"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "visible"
                   value:
                     type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "mandatory"
+                  value:
+                    type: "constant"
                     value:
                       type: "boolean"
                       value: true

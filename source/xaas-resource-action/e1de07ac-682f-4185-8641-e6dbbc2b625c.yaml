@@ -135,7 +135,7 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
+                - type: "readOnly"
                   value:
                     type: "constant"
                     value:
@@ -147,7 +147,7 @@ forms:
                     value:
                       type: "boolean"
                       value: true
-                - type: "readOnly"
+                - type: "refreshOnChange"
                   value:
                     type: "constant"
                     value:
@@ -182,24 +182,24 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "readOnly"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
                 - type: "visible"
                   value:
                     type: "constant"
@@ -234,17 +234,17 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "derivedValue"
-                  value:
-                    type: "path"
-                    path: "vm~name"
-                - type: "editable"
+                - type: "readOnly"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
-                - type: "readOnly"
+                - type: "derivedValue"
+                  value:
+                    type: "path"
+                    path: "vm~name"
+                - type: "editable"
                   value:
                     type: "constant"
                     value:

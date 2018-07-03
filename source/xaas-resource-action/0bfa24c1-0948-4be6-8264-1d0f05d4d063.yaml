@@ -94,13 +94,7 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
-                - type: "mandatory"
+                - type: "readOnly"
                   value:
                     type: "constant"
                     value:
@@ -112,7 +106,13 @@ forms:
                     value:
                       type: "boolean"
                       value: true
-                - type: "readOnly"
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "mandatory"
                   value:
                     type: "constant"
                     value:
@@ -141,13 +141,7 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
-                - type: "mandatory"
+                - type: "readOnly"
                   value:
                     type: "constant"
                     value:
@@ -159,7 +153,13 @@ forms:
                     value:
                       type: "boolean"
                       value: true
-                - type: "readOnly"
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
+                - type: "mandatory"
                   value:
                     type: "constant"
                     value:

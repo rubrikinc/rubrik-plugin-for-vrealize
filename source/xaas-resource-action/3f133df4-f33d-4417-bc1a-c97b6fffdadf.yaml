@@ -88,12 +88,12 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
+                - type: "readOnly"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
-                      value: false
+                      value: true
                 - type: "derivedValue"
                   value:
                     type: "path"
@@ -104,12 +104,12 @@ forms:
                     value:
                       type: "boolean"
                       value: true
-                - type: "readOnly"
+                - type: "refreshOnChange"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
-                      value: true
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -145,13 +145,13 @@ forms:
                     value:
                       type: "boolean"
                       value: true
-                - type: "editable"
+                - type: "readOnly"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
-                - type: "readOnly"
+                - type: "editable"
                   value:
                     type: "constant"
                     value:
@@ -187,13 +187,13 @@ forms:
                     value:
                       type: "boolean"
                       value: false
-                - type: "editable"
+                - type: "readOnly"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
-                - type: "readOnly"
+                - type: "editable"
                   value:
                     type: "constant"
                     value:

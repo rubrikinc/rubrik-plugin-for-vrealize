@@ -118,15 +118,15 @@ forms:
               initialStaticState:
                 dependencies: []
                 facets:
-                - type: "mandatory"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "visible"
                   value:
                     type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "mandatory"
+                  value:
+                    type: "constant"
                     value:
                       type: "boolean"
                       value: true
@@ -164,15 +164,15 @@ forms:
               initialStaticState:
                 dependencies: []
                 facets:
-                - type: "mandatory"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "visible"
                   value:
                     type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "mandatory"
+                  value:
+                    type: "constant"
                     value:
                       type: "boolean"
                       value: true
@@ -216,18 +216,18 @@ forms:
                     value:
                       type: "decimal"
                       value: 0.0
-                - type: "defaultValue"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "decimal"
-                      value: 30.0
                 - type: "visible"
                   value:
                     type: "constantClause"
                     value:
                       type: "boolean"
                       value: true
+                - type: "defaultValue"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "decimal"
+                      value: 30.0
               labelDisplaySize: 2
               customField: false
               staticField: false
@@ -268,18 +268,18 @@ forms:
                     value:
                       type: "decimal"
                       value: 0.0
-                - type: "defaultValue"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "decimal"
-                      value: 60.0
                 - type: "visible"
                   value:
                     type: "constantClause"
                     value:
                       type: "boolean"
                       value: true
+                - type: "defaultValue"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "decimal"
+                      value: 60.0
               labelDisplaySize: 2
               customField: false
               staticField: false
@@ -367,18 +367,18 @@ forms:
               initialStaticState:
                 dependencies: []
                 facets:
-                - type: "mandatory"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "visible"
                   value:
                     type: "constantClause"
                     value:
                       type: "boolean"
                       value: false
+                - type: "mandatory"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
               labelDisplaySize: 2
               customField: false
               staticField: false
@@ -413,18 +413,18 @@ forms:
               initialStaticState:
                 dependencies: []
                 facets:
-                - type: "mandatory"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "visible"
                   value:
                     type: "constantClause"
                     value:
                       type: "boolean"
                       value: false
+                - type: "mandatory"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
               labelDisplaySize: 2
               customField: false
               staticField: false
@@ -492,15 +492,15 @@ forms:
               initialStaticState:
                 dependencies: []
                 facets:
-                - type: "mandatory"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "visible"
                   value:
                     type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "mandatory"
+                  value:
+                    type: "constant"
                     value:
                       type: "boolean"
                       value: true
@@ -538,15 +538,15 @@ forms:
               initialStaticState:
                 dependencies: []
                 facets:
-                - type: "mandatory"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "visible"
                   value:
                     type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "mandatory"
+                  value:
+                    type: "constant"
                     value:
                       type: "boolean"
                       value: true
@@ -677,15 +677,15 @@ forms:
               initialStaticState:
                 dependencies: []
                 facets:
-                - type: "mandatory"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "visible"
                   value:
                     type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "mandatory"
+                  value:
+                    type: "constant"
                     value:
                       type: "boolean"
                       value: true
@@ -736,18 +736,18 @@ forms:
               initialStaticState:
                 dependencies: []
                 facets:
-                - type: "defaultValue"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "string"
-                      value: ""
                 - type: "visible"
                   value:
                     type: "constantClause"
                     value:
                       type: "boolean"
                       value: true
+                - type: "defaultValue"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "string"
+                      value: ""
               labelDisplaySize: 2
               customField: false
               staticField: false
@@ -782,6 +782,12 @@ forms:
               initialStaticState:
                 dependencies: []
                 facets:
+                - type: "visible"
+                  value:
+                    type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: true
                 - type: "mandatory"
                   value:
                     type: "constant"
@@ -794,12 +800,6 @@ forms:
                     value:
                       type: "string"
                       value: ""
-                - type: "visible"
-                  value:
-                    type: "constantClause"
-                    value:
-                      type: "boolean"
-                      value: true
               labelDisplaySize: 2
               customField: false
               staticField: false
