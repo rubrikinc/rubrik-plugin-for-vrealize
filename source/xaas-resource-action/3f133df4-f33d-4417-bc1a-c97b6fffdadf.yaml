@@ -48,15 +48,15 @@ forms:
                 - type: "derivedValue"
                   value:
                     type: "callback"
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "visible"
                   value:
                     type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: false
+                - type: "editable"
+                  value:
+                    type: "constant"
                     value:
                       type: "boolean"
                       value: false
@@ -88,12 +88,12 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "readOnly"
+                - type: "refreshOnChange"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
-                      value: true
+                      value: false
                 - type: "derivedValue"
                   value:
                     type: "path"
@@ -104,12 +104,12 @@ forms:
                     value:
                       type: "boolean"
                       value: true
-                - type: "refreshOnChange"
+                - type: "readOnly"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
-                      value: false
+                      value: true
               initialStaticState:
                 dependencies: []
                 facets: []
@@ -145,13 +145,19 @@ forms:
                     value:
                       type: "boolean"
                       value: true
-                - type: "readOnly"
+                - type: "visible"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
+                - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
-                - type: "editable"
+                - type: "readOnly"
                   value:
                     type: "constant"
                     value:
@@ -181,6 +187,12 @@ forms:
                 dependencies:
                 - "yourRestHost"
                 facets:
+                - type: "editable"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
                 - type: "refreshOnChange"
                   value:
                     type: "constant"
@@ -188,12 +200,6 @@ forms:
                       type: "boolean"
                       value: false
                 - type: "readOnly"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: true
-                - type: "editable"
                   value:
                     type: "constant"
                     value:
@@ -226,18 +232,18 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets: []

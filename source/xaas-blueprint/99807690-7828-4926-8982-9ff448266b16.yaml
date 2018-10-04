@@ -48,15 +48,15 @@ forms:
                 - type: "derivedValue"
                   value:
                     type: "callback"
-                - type: "editable"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "visible"
                   value:
                     type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: false
+                - type: "editable"
+                  value:
+                    type: "constant"
                     value:
                       type: "boolean"
                       value: false
@@ -103,30 +103,30 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets:
-                - type: "visible"
-                  value:
-                    type: "constantClause"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "mandatory"
                   value:
                     type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "visible"
+                  value:
+                    type: "constantClause"
                     value:
                       type: "boolean"
                       value: true
@@ -149,30 +149,30 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets:
-                - type: "visible"
-                  value:
-                    type: "constantClause"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "mandatory"
                   value:
                     type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "visible"
+                  value:
+                    type: "constantClause"
                     value:
                       type: "boolean"
                       value: true
@@ -195,33 +195,33 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
-              initialStaticState:
-                dependencies: []
-                facets:
-                - type: "minValue"
+                - type: "refreshOnChange"
                   value:
                     type: "constant"
                     value:
-                      type: "decimal"
-                      value: 0.0
+                      type: "boolean"
+                      value: false
+              initialStaticState:
+                dependencies: []
+                facets:
                 - type: "visible"
                   value:
                     type: "constantClause"
                     value:
                       type: "boolean"
                       value: true
+                - type: "minValue"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "decimal"
+                      value: 0.0
                 - type: "defaultValue"
                   value:
                     type: "constant"
@@ -247,33 +247,33 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
-              initialStaticState:
-                dependencies: []
-                facets:
-                - type: "minValue"
+                - type: "refreshOnChange"
                   value:
                     type: "constant"
                     value:
-                      type: "decimal"
-                      value: 0.0
+                      type: "boolean"
+                      value: false
+              initialStaticState:
+                dependencies: []
+                facets:
                 - type: "visible"
                   value:
                     type: "constantClause"
                     value:
                       type: "boolean"
                       value: true
+                - type: "minValue"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "decimal"
+                      value: 0.0
                 - type: "defaultValue"
                   value:
                     type: "constant"
@@ -312,13 +312,13 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
+                - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
-                - type: "editable"
+                - type: "refreshOnChange"
                   value:
                     type: "constant"
                     value:
@@ -352,33 +352,33 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
-              initialStaticState:
-                dependencies: []
-                facets:
-                - type: "visible"
+                - type: "refreshOnChange"
                   value:
-                    type: "constantClause"
+                    type: "constant"
                     value:
                       type: "boolean"
                       value: false
+              initialStaticState:
+                dependencies: []
+                facets:
                 - type: "mandatory"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
+                - type: "visible"
+                  value:
+                    type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: false
               labelDisplaySize: 2
               customField: false
               staticField: false
@@ -398,33 +398,33 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
-              initialStaticState:
-                dependencies: []
-                facets:
-                - type: "visible"
+                - type: "refreshOnChange"
                   value:
-                    type: "constantClause"
+                    type: "constant"
                     value:
                       type: "boolean"
                       value: false
+              initialStaticState:
+                dependencies: []
+                facets:
                 - type: "mandatory"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
+                - type: "visible"
+                  value:
+                    type: "constantClause"
+                    value:
+                      type: "boolean"
+                      value: false
               labelDisplaySize: 2
               customField: false
               staticField: false
@@ -477,30 +477,30 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets:
-                - type: "visible"
-                  value:
-                    type: "constantClause"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "mandatory"
                   value:
                     type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "visible"
+                  value:
+                    type: "constantClause"
                     value:
                       type: "boolean"
                       value: true
@@ -523,30 +523,30 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets:
-                - type: "visible"
-                  value:
-                    type: "constantClause"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "mandatory"
                   value:
                     type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "visible"
+                  value:
+                    type: "constantClause"
                     value:
                       type: "boolean"
                       value: true
@@ -569,18 +569,18 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets:
@@ -609,18 +609,18 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets:
@@ -662,30 +662,30 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets:
-                - type: "visible"
-                  value:
-                    type: "constantClause"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "mandatory"
                   value:
                     type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "visible"
+                  value:
+                    type: "constantClause"
                     value:
                       type: "boolean"
                       value: true
@@ -721,18 +721,18 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets:
@@ -767,30 +767,30 @@ forms:
               state:
                 dependencies: []
                 facets:
-                - type: "refreshOnChange"
-                  value:
-                    type: "constant"
-                    value:
-                      type: "boolean"
-                      value: false
                 - type: "editable"
                   value:
                     type: "constant"
                     value:
                       type: "boolean"
                       value: true
+                - type: "refreshOnChange"
+                  value:
+                    type: "constant"
+                    value:
+                      type: "boolean"
+                      value: false
               initialStaticState:
                 dependencies: []
                 facets:
-                - type: "visible"
-                  value:
-                    type: "constantClause"
-                    value:
-                      type: "boolean"
-                      value: true
                 - type: "mandatory"
                   value:
                     type: "constant"
+                    value:
+                      type: "boolean"
+                      value: true
+                - type: "visible"
+                  value:
+                    type: "constantClause"
                     value:
                       type: "boolean"
                       value: true
