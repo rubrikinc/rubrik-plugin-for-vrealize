@@ -130,7 +130,7 @@ class VRASession:
 
 if __name__ == '__main__':
     session = VRASession(sys.argv[1:])
-    if '--tenant=rubrik-devops' in sys.argv:
+    if '--tenant=gaia' in sys.argv:
         session.delete_package()
         session.create_package()
         session.download_package()
