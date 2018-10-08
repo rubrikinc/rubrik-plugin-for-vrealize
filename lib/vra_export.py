@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 import requests, json, sys, pprint, time,argparse
 import re
 from requests.auth import HTTPBasicAuth
