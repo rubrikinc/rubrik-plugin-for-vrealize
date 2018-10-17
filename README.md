@@ -1,8 +1,8 @@
 # vRealize Automation Integration Requirements
 ## vRealize Environment
-* Rubrik 4.1 or above 
-* vRA 7.3 or above
-* vRO 7.3 or above - If you're importing the vRA Blueprints
+* Rubrik CDM v4.1 or above 
+* vRA v7.3 or above
+* vRO v7.3 or above - If you're importing the vRA Blueprints
 
 ## Development Workstation
 * VMware’s Cloudclient - https://code.vmware.com/web/dp/tool/cloudclient/4.6.0
