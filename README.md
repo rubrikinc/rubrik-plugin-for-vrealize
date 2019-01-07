@@ -52,10 +52,11 @@ Go to 'Administration > Property Dictionary > Property Groups', create a new Pro
 * ID: rubrik
 * Visibility: All tenants
 * Properties:
-  Name | Value | Encrypted | Show in Request
-  --- | --- | --- | ---
-  rubrik.cluster | \<blank\> | No | Yes
-  rubrik.sla_name | \<blank\> | No | Yes
+
+Name | Value | Encrypted | Show in Request
+--- | --- | --- | ---
+rubrik.cluster | \<blank\> | No | Yes
+rubrik.sla_name | \<blank\> | No | Yes
 
 #### Creating the Event Broker Subscription
 
