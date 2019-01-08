@@ -1,35 +1,41 @@
-# Introduction to the Rubrik Plugin for vRealize
+# Quick Start Guide: Rubrik Plugin for vRealize
+
+## Introduction to the Rubrik Plugin for vRealize
 With Rubrik's core fundamental strategy of an API First architecture, integrating Rubrik CDM functionality and features into a vRealize Automation (vRA)  service catalog is easily achieved by importing the Rubrik Plugin for vRealize into vRealize Orchestrator (vRO). Once installed, custom vRA Property Definitions and Groups can be created and assigned to existing or newly created blueprints. Leveraging Rubrik with vRA brings many benefits to organizations such as:
 
-●	Data Loss Prevention - This will ensure data protection is a key stakeholder in your VM Lifecycle Management and provisioning processes by requiring newly created VMs to be protected.
-●	Self-Service Instant Recovery - This provides a one-click process to restore files to any point-in-time, and the ability to resume operations within minutes of an attack with self-service file-level recovery.
-●	Streamlined Operations - This eliminates lengthy wait times at the help desk with self-service access to backup and restore operations.
-●	Alignment with Business SLAs - Automate compliance policies in just a few clicks to adhere to strict business requirements.
+*	**Data Loss Prevention** - This will ensure data protection is a key stakeholder in your VM Lifecycle Management and provisioning processes by requiring newly created VMs to be protected.
+*	**Self-Service Instant Recovery** - This provides a one-click process to restore files to any point-in-time, and the ability to resume operations within minutes of an attack with self-service file-level recovery.
+*	**Streamlined Operations** - This eliminates lengthy wait times at the help desk with self-service access to backup and restore operations.
+*	**Alignment with Business SLAs** - Automate compliance policies in just a few clicks to adhere to strict business requirements.
 
 The Rubrik Plugin for vRealize contains a number of pre-built workflows, actions, and configuration elements which, once imported into vRO, allow administrators to easily integrate data management processes into self-service catalogs.
-Rubrik Plugin for vRealize Quickstart
+
+## Rubrik Plugin for vRealize Quickstart
 The following section outlines how to get started using the Rubrik Plugin for vRealize, including installation and configuration of the plugin as well as how to import sample, pre-built vRA blueprints and entitle them appropriately.
-Prerequisites
+
+### Prerequisites
 The following are the prerequisites in order to successfully install and configure the Rubrik Plugin for vRealize:
 
-●	VMware vRealize Automation 7.3 or above
-●	Rubrik Plugin for vRealize
-●	Rubrik CDM 4.1 or above
+*	VMware vRealize Automation 7.3 or above
+*	[Rubrik Plugin for vRealize](https://github.com/rubrikinc/rubrik-vrealize)
+*	Rubrik CDM 4.1 or above
 
-In addition to the above requirements, the following are the prerequisites in order to successfully import and execute the pre-built vRA blueprints outlined in this quickstart guide:
+In addition to the above requirements, the following are the prerequisites in order to successfully import and execute the pre-built vRA blueprints outlined in this quick start guide:
 
-●	VMware vRealize CloudClient
-●	Rubrik blueprints for vRA
-Installation
+*	[VMware vRealize CloudClient](https://code.vmware.com/web/dp/tool/cloudclient/4.6.0)
+*	[Rubrik blueprints for vRA](https://github.com/rubrikinc/rubrik-vrealize/blob/master/vra_blueprints.zip)
+
+### Installation
 This section will outline how to install the Rubrik Plugin for vRealize as well as import sample Rubrik blueprints and resource actions into vRA.
-Rubrik Plugin for vRealize Installation
+
+#### Rubrik Plugin for vRealize Installation
 Rubrik’s integration with vRealize Automation (vRA) is supported by the Rubrik Plugin for vRealize containing a number of pre-built workflows and configuration items. The following outlines the steps to download and install the Rubrik Plugin for vRealize:
 
 1.	Download the Rubrik Plugin for Realize, located on GitHub. 
 2.	Log into vRO. 
-3.	Switch to either the Design or Administer view in the vRO client. This grants access to the Packages tab.
+3.	Switch to either the **Design** or **Administer** view in the vRO client. This grants access to the **Packages** tab.
 
-
+![alt text](/docs/images/image1.png)
 
 4.	Click the Import package button, browse to the previously downloaded Rubrik Plugin (com.rubrik.devops.package) and select Open.
 
