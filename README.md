@@ -1,79 +1,48 @@
-# vRealize Automation Integration Requirements
+# Rubrik Plugin for vRealize
+Rubrik provides cradle-to-grave data management for VMs provisioned using vRealize. Day 2 operations such as Instant Recovery, Live Mount, and on-demand snapshots are available
 
-## vRealize Environment
+## Installation
+The Rubrik Plugin for vRealize consists of two primary components: a package for vRealize Orchestrator and blueprints for vRealize Automation. 
 
-* Rubrik CDM v4.1 or above
-* vRA v7.3 or above
-* vRO v7.3 or above - If you're importing the vRA Blueprints
-
-## Development Workstation
-
-* VMware's Cloudclient - available [here](https://code.vmware.com/web/dp/tool/cloudclient/4.6.0)
-* VMware's vRO Workflow Designer
-* Network Access and Credentials for vRealize Infrastructure
-
-## Rubrik Customization Installation
-
-### vRO Package
+### Rubrik Package vRealize Orchestrator
 
 * Download vRO Package - available [here](https://github.com/rubrik-devops/rubrik-vrealize/blob/master/com.rubrik.devops.package)
 * Run vRO Designer
-* Administer->Packages->Import Package
-* Select com.rubrik.devops.package
-* Select 'Import selected elements'
-* Run the Workflow 'Rubrik - Add Cluster Instance', entering your cluster information in the form
+* **Administer** > **Packages** > **Import Package**
+* Select `com.rubrik.devops.package`
+* Select **Import selected elements**
+* Run the Workflow `Rubrik - Add Cluster Instance`, entering your cluster information in the form
 * Module is now configured
 
-### vRA Blueprints
+### Rubrik Blueprints for vRealize Automation
 
 * Download vRA blueprints - available [here](https://github.com/rubrik-devops/rubrik-vrealize/blob/master/vra_blueprints.zip)
-* Authenticate to vRA via CloudClient - vra login userpass
-* Import Module - vra content import --path [path to vra_blueprints.zip] --resolution OVERWRITE --precheck WARN --verbose \[--dry-run\]
+* Authenticate to vRA via CloudClient 
+  
+  ```
+  vra login userpass
+  ```
+  
+* Import Module 
+  
+  ```
+  vra content import --path [path to vra_blueprints.zip] --resolution OVERWRITE --precheck WARN --verbose \[--dry-run\]
+  ```https://www.rubrik.com/blog/a-how-to-guide-on-rubriks-vrealize-automation-integration/
+  
 * Entitle Resource Actions within the tenant - Administration->Catalog Management->Entitlements
 
-### Creating vRA Custom Properties for Provisioning Hooks
+## Quick Start
+* [Quick Start Guide - Rubrik Plugin for vRealize](https://github.com/rubrikinc/rubrik-plugin-for-vrealize/blob/master/docs/quick-start.md)
+* [Use Case: Provision and Protect with vRealize Automation](https://github.com/rubrikinc/rubrik-blueprints-for-vrealize/blob/master/Provision-and-Protect/quick-start.md)
 
-Custom Properties can be used to provide provisioning hooks into vRA Blueprint deployment, enabling the addition of newly provisioned VMware VMs into Rubrik SLA Domain policies.
+## Documentation
+* [Rubrik API Documentation](https://github.com/rubrikinc/api-documentation)
 
-The following steps describe the process for configuring and applying these properties to existing blueprints:
-
-#### Creating the Property Group and Properties
-
-Go to 'Administration > Property Dictionary > Property Definitions', create two new Custom Property definitions as follows:
-
-Name | Label | Visibility | Data type | Required | Display as | Values | Script action | Input parameters
---- | --- | --- | --- | --- | --- | --- | --- | ---
-rubrik.cluster | Rubrik Cluster | All tenants | String | Yes | Dropdown | External values | com.rubrik.devops.actions/rubrik_GetRestHosts | None
-rubrik.sla_name | Rubrik SLA Domain | All tenants | String | Yes | Dropdown | External values | com.rubrik.devops.actions/rubrik_GetSlaList | rubrik_host/Yes/rubrik.cluster
-
-Go to 'Administration > Property Dictionary > Property Groups', create a new Property Group as follows:
-
-* Name: Rubrik
-* ID: rubrik
-* Visibility: All tenants
-* Properties:
-
-Name | Value | Encrypted | Show in Request
---- | --- | --- | ---
-rubrik.cluster | \<blank\> | No | Yes
-rubrik.sla_name | \<blank\> | No | Yes
-
-#### Creating the Event Broker Subscription
-
-Go to 'Administration > Events > Subscriptions', create a new Subscription as follows:
-
-* Event Topic: Machine provisioning
-* Conditions: Run based on conditions (All of the following):
-  * `Data > Machine > Machine type` Equals `Virtual Machine`
-  * `Data > Lifecycle state > Lifecycle state name` Equals `VMPSMasterWorkflow32.MachineActivated`
-  * `Data > Lifecycle state > State phase` Equals `POST`
-* Workflow: Orchestrator > Library > Rubrik-DevOps > Helper Workflows > Rubrik - Post-Provisioning Workflow
-* Details:
-  * Name: Rubrik - Post-Provisioning Workflow
-  * Description: Manages post-provisioning activities for VMs with Rubrik custom properties
-
-Select the new subscription and click 'Publish'
-
-#### Using the Post-Provisioning Workflow
-
-On a VM in an IaaS blueprint, the 'Rubrik' Property Group can now be added to facilitate protection of the VM as part of provisioning.
+## Additional Links
+* [Rubrik Blueprints for vRealize](https://github.com/rubrikinc/rubrik-blueprints-for-vrealize)
+* [VIDEO: Getting Started with the Rubrik Plugin for vRealize]()
+* [VIDEO: Getting Started Provisioning and Protecting with vRealize]()
+* [BLOG: Provision and Protect vRealize Workloads](https://www.rubrik.com/blog/provision-protect-vrealize-rubrik/)
+* [BLOG: A How-To Guide on Rubrik’s vRealize Automation Integration](https://www.rubrik.com/blog/a-how-to-guide-on-rubriks-vrealize-automation-integration/)
+* [BLOG: New vRealize Orchestrator Workflows for Enhancing Your Rubrik Experience](https://www.rubrik.com/blog/vrealize-orchestrator-rubrik/)
+* [BLOG: Open Source vRealize Orchestrator Plugin Released](https://www.rubrik.com/blog/open-source-vrealize-orchestrator-plugin-released/)
