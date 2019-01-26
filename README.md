@@ -27,9 +27,9 @@ The Rubrik Plugin for vRealize consists of two primary components: a package for
   
   ```
   vra content import --path [path to vra_blueprints.zip] --resolution OVERWRITE --precheck WARN --verbose \[--dry-run\]
-  ```https://www.rubrik.com/blog/a-how-to-guide-on-rubriks-vrealize-automation-integration/
+  ```
   
-* Entitle Resource Actions within the tenant - Administration->Catalog Management->Entitlements
+* Entitle Resource Actions within the tenant - **Administration** > **Catalog Management** > **Entitlements**
 
 ## Quick Start
 * [Quick Start Guide - Rubrik Plugin for vRealize](https://github.com/rubrikinc/rubrik-plugin-for-vrealize/blob/master/docs/quick-start.md)
