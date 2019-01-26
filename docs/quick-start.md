@@ -17,7 +17,7 @@ The following section outlines how to get started using the Rubrik Plugin for vR
 The following are the prerequisites in order to successfully install and configure the Rubrik Plugin for vRealize:
 
 *	VMware vRealize Automation 7.3 or above
-*	[Rubrik Plugin for vRealize](https://github.com/rubrikinc/rubrik-vrealize)
+*	[Rubrik Plugin for vRealize](https://github.com/rubrikinc/rubrik-plugin-for-vrealize/blob/master/com.rubrik.devops.package)
 *	Rubrik CDM 4.1 or above
 
 In addition to the above requirements, the following are the prerequisites in order to successfully import and execute the pre-built vRA blueprints outlined in this quick start guide:
