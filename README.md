@@ -40,9 +40,17 @@ The Rubrik Plugin for vRealize consists of two primary components: a package for
 
 ## Additional Links
 * [Rubrik Blueprints for vRealize](https://github.com/rubrikinc/rubrik-blueprints-for-vrealize)
-* [VIDEO: Getting Started with the Rubrik Plugin for vRealize]()
-* [VIDEO: Getting Started Provisioning and Protecting with vRealize]()
+* [VIDEO: Getting Started with the Rubrik Plugin for vRealize](https://www.youtube.com/watch?v=Bpzp64YwrCQ&feature=youtu.be)
+* [VIDEO: Getting Started Provisioning and Protecting with vRealize](https://www.youtube.com/watch?v=T1FSBsVwg-g&feature=youtu.be)
 * [BLOG: Provision and Protect vRealize Workloads](https://www.rubrik.com/blog/provision-protect-vrealize-rubrik/)
 * [BLOG: A How-To Guide on Rubrik’s vRealize Automation Integration](https://www.rubrik.com/blog/a-how-to-guide-on-rubriks-vrealize-automation-integration/)
 * [BLOG: New vRealize Orchestrator Workflows for Enhancing Your Rubrik Experience](https://www.rubrik.com/blog/vrealize-orchestrator-rubrik/)
 * [BLOG: Open Source vRealize Orchestrator Plugin Released](https://www.rubrik.com/blog/open-source-vrealize-orchestrator-plugin-released/)
+
+## Contributing
+We glady welcome contributions from the community. From updating the documentation to adding more blueprints for vRealize, all ideas are welcome!
+
+* [Contributing Guide](https://github.com/rubrikinc/rubrik-plugin-for-vrealize/blob/master/CONTRIBUTING.md)
+
+## License
+* [MIT License](https://github.com/rubrikinc/rubrik-plugin-for-vrealize/blob/master/LICENSE)
