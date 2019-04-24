@@ -28,7 +28,6 @@ class VRASession:
         self.baseurl = "https://" + self.host
         if self.tenant:
             self.token =  self.authenticate(self.host, self.username, self.password, self.tenant)
-            print self.token
             self.headers = {'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': self.token}
         else:
             self.headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
@@ -131,10 +130,12 @@ class VRASession:
 if __name__ == '__main__':
     session = VRASession(sys.argv[1:])
     if '--tenant' in sys.argv:
+        print("Request for vRA Blueprints")
         session.delete_package()
         session.create_package()
         session.download_package()
     else:
+        print("Request for vRO Package")
         session.download_vro()
         
       
