@@ -10,8 +10,6 @@ pp = pprint.PrettyPrinter(indent=4)
 class VRASession:
 
     def __init__(self,argv):
-
-        #Disable ssl warnings for Requests
         requests.packages.urllib3.disable_warnings()
         parser = argparse.ArgumentParser()
         parser.add_argument('--host', dest='host', help='VRA Host')
@@ -129,7 +127,8 @@ class VRASession:
 
 if __name__ == '__main__':
     session = VRASession(sys.argv[1:])
-    if '--tenant' in sys.argv:
+    pp.pprint(sys.argv)
+    if re.search(r'tenant',str(sys.argv[1:])):
         print("Request for vRA Blueprints")
         session.delete_package()
         session.create_package()
