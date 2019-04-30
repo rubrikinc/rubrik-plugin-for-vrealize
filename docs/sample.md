@@ -1,10 +1,10 @@
-### Creating vRA Custom Properties for Provisioning Hooks
+# Creating vRA Custom Properties for Provisioning Hooks
 
 Custom Properties can be used to provide provisioning hooks into vRA Blueprint deployment, enabling the addition of newly provisioned VMware VMs into Rubrik SLA Domain policies.
 
 The following steps describe the process for configuring and applying these properties to existing blueprints:
 
-#### Creating the Property Group and Properties
+## Creating the Property Group and Properties
 
 Go to 'Administration > Property Dictionary > Property Definitions', create two new Custom Property definitions as follows:
 
@@ -25,7 +25,7 @@ Name | Value | Encrypted | Show in Request
 rubrik.cluster | \<blank\> | No | Yes
 rubrik.sla_name | \<blank\> | No | Yes
 
-#### Creating the Event Broker Subscription
+## Creating the Event Broker Subscription
 
 Go to 'Administration > Events > Subscriptions', create a new Subscription as follows:
 
@@ -41,6 +41,6 @@ Go to 'Administration > Events > Subscriptions', create a new Subscription as fo
 
 Select the new subscription and click 'Publish'
 
-#### Using the Post-Provisioning Workflow
+## Using the Post-Provisioning Workflow
 
 On a VM in an IaaS blueprint, the 'Rubrik' Property Group can now be added to facilitate protection of the VM as part of provisioning.
