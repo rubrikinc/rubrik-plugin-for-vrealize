@@ -2,40 +2,11 @@
 
 ## Overview
 
-This document describes the creation of Rubrik Catalog Items in the vRA Service Catalog.
-
-## Creating the XaaS Blueprints
-
-### General Instructions
-
-1. Go to the 'Design' tab in vRA, select 'XaaS > XaaS Blueprints'
-1. Click '+ New', select the desired workflow from the 'Orchestrator > Library > Rubrik-DevOps > VRA-CatalogItems' folder
-1. Click 'Next', 'Next'
-1. Edit the form as desired (see below)
-1. Click 'Next', 'Next', 'Finish'
-
-### XaaS Blueprint Forms - Using Business Groups for Multi-Tenancy
-
-1. When editing the vRA form, select the 'Business Group' field on the form
-1. Click the 'Constraints' tab in the right hand pane
-1. Under 'Read only', select 'Constant', 'Yes'
-1. Under 'Value', select 'Field', click 'Define Field Values', select 'Request info > Business group > Name'
-1. Under 'Visible', select 'Constant', 'No'
-
-### XaaS Blueprint Forms - No Multi-Tenancy Requirement
-
-1. When editing the vRA form, select the 'Business Group' field on the form
-1. Click the 'Constraints' tab in the right hand pane
-1. Under 'Read only', select 'Constant', 'Yes'
-1. Under 'Visible', select 'Constant', 'No'
-
-### Publish Blueprints
-
-Once all blueprints have been created, ensure that these are published, by selecting the blueprint from the summary screen, and clicking the 'Publish' button.
+This document describes the management of Rubrik Catalog Items in the vRA Service Catalog.
 
 ## Creating Services
 
-How the Rubrik Catalog Items are served out to users will depend on the customer, but below is a suggestion of how to deliver this:
+The Rubrik Catalog Items are served out to users will depend on the customer, but below is a suggestion of how to deliver this:
 
 ---
 
@@ -109,6 +80,38 @@ How the Rubrik Catalog Items are served out to users will depend on the customer
 ---
 
 NOTE: These are suggestions only, whether each Catalog Items should be published to any service will depend on what the vRA and Rubrik administrators want to deliver to users.
+
+## Managing the XaaS Blueprints
+
+XaaS blueprints will be created when importing the vRA content using CloudClient, this defaults to the settings described in the XaaS Blueprint Forms - Using Business Groups for Multi-Tenancy section below. This may need amending depending on your environment, the below steps detail this.
+
+### Editing a blueprint
+
+1. Go to the 'Design' tab in vRA, select 'XaaS > XaaS Blueprints'
+1. Click '+ New', select the desired workflow from the 'Orchestrator > Library > Rubrik-DevOps > VRA-CatalogItems' folder
+1. Click 'Next', 'Next'
+1. Edit the form as desired (see below)
+1. Click 'Next', 'Next', 'Finish'
+
+### XaaS Blueprint Forms - Using Business Groups for Multi-Tenancy
+
+1. When editing the vRA form, select the 'Business Group' field on the form
+1. Click the 'Constraints' tab in the right hand pane
+1. Under 'Read only', select 'Constant', 'Yes'
+1. Under 'Value', select 'Field', click 'Define Field Values', select 'Request info > Business group > Name'
+1. Under 'Visible', select 'Constant', 'No'
+
+### XaaS Blueprint Forms - No Multi-Tenancy Requirement
+
+1. When editing the vRA form, select the 'Business Group' field on the form
+1. Click the 'Constraints' tab in the right hand pane
+1. Under 'Read only', select 'Constant', 'Yes'
+1. Under 'Value', select 'Field', click 'Constant', enter the string 'Global'
+1. Under 'Visible', select 'Constant', 'No'
+
+### Publish Blueprints
+
+Once all blueprints have been created, ensure that these are published, by selecting the blueprint from the summary screen, and clicking the 'Publish' button.
 
 ## Attaching Services to Entitlements
 
