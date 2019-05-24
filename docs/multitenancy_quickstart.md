@@ -28,7 +28,7 @@ useOnlyGlobalOrg    | boolean       | Determines if we should only ever use the 
 
 In some customers, it is preferable to use a shortened value of the Business Group name, e.g. `CCO` instead of `Colgate Corporation`. If this is desired, then we will look for the Custom Attribute with naming convention `*.Tenant.ShortName`, and use the retrieved value to resolve to Organization Name.
 
-NOTE: the name of the custom property being used is hardcoded into the `rubrik_BGNameToOrgName` action. It is possible to change this in here, but has not been tested with any other combination, so may lead to issues.
+The name of the custom property being used is hardcoded into the `rubrik_BGNameToOrgName` action. It is possible to change this in here, but has not been tested with any other combination, so may lead to issues.
 
 ---
 
