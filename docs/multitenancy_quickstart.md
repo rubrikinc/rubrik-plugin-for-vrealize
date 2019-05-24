@@ -79,7 +79,7 @@ The following shows the `dbaorg` organization within the Rubrik UI. As shown, th
 ---
 **NOTE**
 
-To ensure that the correct default organization is set to Global for the service account, login with it to the Rubrik UI after an organization has been created. When prompted, select 'Global' for the Organization and check to 'Remember Selected Organization', then continue the sign-in.
+To ensure that the correct default organization is set to Global for the service account, login with it to the Rubrik UI after an organization has been created. When prompted, select 'Global' for the Organization and check 'Remember Selected Organization', then continue the sign-in.
 
 ---
 
