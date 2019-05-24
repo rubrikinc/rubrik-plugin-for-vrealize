@@ -124,15 +124,9 @@ Before consuming any workflows within vRA/vRO the Rubrik Plugin for vRealize mus
 
 The Rubrik Plugin for vRealize has now been successfully configured, set up, and connected with a Rubrik CDM cluster. All workflows contained within the plugin are now accessible and executable.
 
-#### Configuring vRA/vRO Interaction
+#### Configuring Multi-tenancy
 
-Rubrik's vRA/vRO Integration now features support for multi-tenancy with XaaS workflows, for details on how to configure this, see [this document](configure_vra.md).
-
-Once this is configured it may be required to manage Organizations in Rubrik, this is detailed [here](managing_organizations.md).
-
-#### Configuring Catalog Items and Services
-
-Services will need to be configured with the new Rubrik XaaS workflows, and these may need editing for your environment. Detail on this can be found [here](create_catalog_items.md).
+The Rubrik Plugin for vRealize now features support for multi-tenancy with XaaS workflows, for details on how to configure this along with subsequent Rubrik organizations see the [Multi-tenancy Quickstart Guide](multitenancy_quickstart.md).
 
 #### Configuring Entitlements in vRA
 
@@ -218,11 +212,11 @@ The following outlines the steps to execute the `Rubrik - Assign SLA Domain` Res
 
 ![alt text](/docs/images/image27.png)
 
-4.	The task process will display in the **Deployments** tab with the associated vRO workflow, `Rubrik - Assign SLA Domain`, running in the background displaying any generated logs.
+4. The task process will display in the **Deployments** tab with the associated vRO workflow, `Rubrik - Assign SLA Domain`, running in the background displaying any generated logs.
 
 ![alt text](/docs/images/image28.png)
 
-5.	The vRO workflow makes the appropriate API calls to the Rubrik cluster to modify the SLA Domain assignment of the given virtual machine. The virtual machine is now assigned to the `Gold` SLA Domain.
+5. The vRO workflow makes the appropriate API calls to the Rubrik cluster to modify the SLA Domain assignment of the given virtual machine. The virtual machine is now assigned to the `Gold` SLA Domain.
 
 ## API Documentation
 
