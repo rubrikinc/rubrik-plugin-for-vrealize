@@ -93,6 +93,8 @@ The `Rubrik - Create Organization` workflow can be used to create an organizatio
 
 The `Rubrik - Create Organization` workflow also adds the specified user account as an Org Admin within Rubrik.
 
+To carry out some of the API calls needed by vRO on behalf of an organization in Rubrik, it is necessary for vRO to obtain an API token from Rubrik specific to that organization. This relies on the account configured on the vRO REST endpoint to be added to each Organization in the Org Admin role. This workflow will add the required permissions to the organization, such that it will support the other vRO workflows.
+
 #### Deleting an Organization
 
 The `Rubrik - Delete an Organization` workflow can be used to immediately delete an organization from the selected Rubrik cluster. This is located in the `Rubrik-DevOps > vRO-Workflows > Organizations` folder within vRO
