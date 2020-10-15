@@ -209,6 +209,19 @@ While the organization of catalog items will vary depending on customer requirem
 
 ---
 
+**Service Name**: Rubrik - Oracle
+
+**Description**: Manage protection of Oracle DBs with Rubrik
+
+**Catalog Items**:
+
+* Rubrik - Add an Oracle Host
+* Rubrik - Export an Oracle Backup
+* Rubrik - Protect an Oracle DB
+* Rubrik - Snapshot an Oracle DB
+
+---
+
 **Service Name**: Rubrik - Unmanaged Objects
 
 **Description**: Report on and delete Unmanaged Objects on Rubrik
