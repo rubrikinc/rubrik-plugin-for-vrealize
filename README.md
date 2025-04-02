@@ -6,7 +6,7 @@ The Rubrik Plugin for vRealize consists of two primary components: a package for
 
 ## Rubrik Package vRealize Orchestrator
 
-* Download vRO Package - available [here](https://github.com/rubrik-devops/rubrik-vrealize/blob/master/com.rubrik.devops.package)
+* Download vRO Package - available [here](https://github.com/rubrikinc/rubrik-vrealize/blob/master/com.rubrik.devops.package)
 * Run vRO Designer
 * **Administer** > **Packages** > **Import Package**
 * Select `com.rubrik.devops.package`
@@ -16,7 +16,7 @@ The Rubrik Plugin for vRealize consists of two primary components: a package for
 
 ## Rubrik Blueprints for vRealize Automation
 
-* Download vRA blueprints - available [here](https://github.com/rubrik-devops/rubrik-vrealize/blob/master/vra_blueprints.zip)
+* Download vRA blueprints - available [here](https://github.com/rubrikinc/rubrik-vrealize/blob/master/vra_blueprints.zip)
 * Authenticate to vRA via CloudClient 
   
   ```
